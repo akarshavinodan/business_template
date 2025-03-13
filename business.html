@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Business Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="css/business.css">
+   
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <img src="images/ict-logo.png" alt="Logo" height="50">
+                </div>
+                
+                <!-- Desktop Search -->
+                <div class="col d-none d-md-block">
+                    <div class="search-container d-flex">
+                        <select class="form-select border-0">
+                            <option>Select State</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="tamilnadu">Tamil Nadu</option>
+                        </select>
+                        
+                        <select class="form-select border-0">
+                            <option>Select City</option>
+                            <option value="ernakulam">Ernakulam</option>
+                            <option value="kottayam">Kottayam</option>
+                            <option value="alappuzha">Alappuzha</option>
+                            <option value="erode">Erode</option>
+                            <option value="kollam">Kollam</option>
+                            <option value="thrissur">Thrissur</option>
+                            <option value="kochi">Kochi</option>
+                            <option value="thiruvalla">Thiruvalla</option>
+                            <option value="adoor">Adoor</option>
+                            <option value="palakkad">Palakkad</option>
+                            <option value="cherthala">Cherthala</option>
+                            <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                            <option value="aluva">Aluva</option>
+                            <option value="kakkanad">Kakkanad</option>
+                            <option value="malappuram">Malappuram</option>
+                        </select>
+
+                        
+                        <input type="text" class="form-control border-0" placeholder="What are you looking for?">
+                        <button class="btn btn-primary rounded-circle"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Mobile Search Button -->
+                <div class="col d-md-none">
+                    <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        What are you looking for?
+                    </button>
+                </div>
+
+                <div class="col-auto">
+                    <a href="#" class="text-decoration-none text-dark">ICT Global Tech your home</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal for Mobile -->
+    <div class="modal fade search-modal" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <select class="form-select mb-3">
+                        <option>Select State</option>
+                    </select>
+                    <select class="form-select mb-3">
+                        <option>Select City</option>
+                    </select>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="What are you looking for?">
+                        <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="container">
+        <div class="category-container">
+            <button class="scroll-button scroll-left">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="scroll-button scroll-right">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="category-scroll">
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-hospital"></i></div>
+                    <div class="category-name">Cosmetic Dermatology Clinic</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-bandaid"></i></div>
+                    <div class="category-name">Dental Clinic</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-basket"></i></div>
+                    <div class="category-name">Spices and nuts</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-car-front"></i></div>
+                    <div class="category-name">Automotive</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-house-heart"></i></div>
+                    <div class="category-name">Home decor</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-flower1"></i></div>
+                    <div class="category-name">Naturopathy & Yoga Hospital</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-scissors"></i></div>
+                    <div class="category-name">Textiles</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-sign-turn-right"></i></div>
+                    <div class="category-name">Driving school</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-bicycle"></i></div>
+                    <div class="category-name">Gym</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-phone"></i></div>
+                    <div class="category-name">Electronics</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-buildings"></i></div>
+                    <div class="category-name">Real Estate</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-lightning-charge"></i></div>
+                    <div class="category-name">Autopower systems and solutions</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-gem"></i></div>
+                    <div class="category-name">Jewellery</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-door-open"></i></div>
+                    <div class="category-name">Furniture</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-door-closed"></i></div>
+                    <div class="category-name">Door Supplier</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-globe"></i></div>
+                    <div class="category-name">ICT Global Tech</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-house-gear"></i></div>
+                    <div class="category-name">Interiors</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-airplane"></i></div>
+                    <div class="category-name">Tours & Travels</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-shop"></i></div>
+                    <div class="category-name">Petshop</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-cup-hot"></i></div>
+                    <div class="category-name">Restaurant</div>
+                </div>
+                
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-disc"></i></div>
+                    <div class="category-name">Tyre shop</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-mortarboard"></i></div>
+                    <div class="category-name">Academy</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-capsule"></i></div>
+                    <div class="category-name">Homeo Clinic</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-sun"></i></div>
+                    <div class="category-name">Solar Systems</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-stars"></i></div>
+                    <div class="category-name">Beauty salon</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-tree"></i></div>
+                    <div class="category-name">Landscape Designers</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-book"></i></div>
+                    <div class="category-name">Pre school</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-grid-3x3"></i></div>
+                    <div class="category-name">Tiles Retail Company</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-tools"></i></div>
+                    <div class="category-name">Hardware Stores</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-window"></i></div>
+                    <div class="category-name">Windows & Doors</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-lamp"></i></div>
+                    <div class="category-name">Electricals & Home decor</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-pen"></i></div>
+                    <div class="category-name">Tattoo Studio</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-droplet"></i></div>
+                    <div class="category-name">Water Solutions</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-building"></i></div>
+                    <div class="category-name">Construction</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-basket2"></i></div>
+                    <div class="category-name">Home good store</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-truck"></i></div>
+                    <div class="category-name">Logistics company</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-window"></i></div>
+                    <div class="category-name">Curtain Store</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-moon-stars"></i></div>
+                    <div class="category-name">Mattress shop</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-wrench"></i></div>
+                    <div class="category-name">Vehicle service</div>
+                </div>
+    
+                <div class="category-item">
+                    <div class="category-icon"><i class="bi bi-heart-pulse"></i></div>
+                    <div class="category-name">Health care</div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Section -->
+    <section class="container mt-5 featured-section">
+        <div class="row align-items-center g-4">
+            <!-- Image Collage -->
+            <div class="col-md-6">
+                <div class="gallery">
+                    <img src="images/dental.jpeg" alt="a wolve">
+                    <img src="images/furnitures.jpeg" alt="a cloudy sky">
+                    <img src="images/travel.jpeg" alt="a tiger">
+                    <img src="images/logistics.jpeg" alt="a forest in the snow">
+                    <img src="images/home decor.jpeg" alt="a lioness">
+                    <img src="images/spices.jpeg" alt="a forest">
+                    <img src="images/tiles.jpg" alt="those kind of dog and wolve at the same time">
+                    <img src="images/tatoo.jpeg" alt="the sea">
+                    <img src="images/saloom.jpeg" alt="a bear">
+                  </div>
+            </div>
+
+            <!-- Content -->
+            <div class="col-md-6">
+                <div class="featured-content" data-aos="fade-up">
+                    <span class="badge bg-primary mb-2">Featured Categories</span>
+                    <h2 class="mb-4">Discover Local Businesses Near You</h2>
+                    <p class="lead mb-4">Explore a wide range of services from verified local businesses.
+                         From healthcare to home services, find everything you need in one place.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <i class="bi bi-shop"></i>
+                            <h4>Local Businesses</h4>
+                            <p>Connect with trusted businesses in your neighborhood</p>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Multiple Locations</h4>
+                            <p>Find services across different cities and states</p>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-stars"></i>
+                            <h4>Quality Service</h4>
+                            <p>Experience the best service from verified providers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Added Section -->
+    <section class="recently-added">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">Recently Added</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+                    <div class="business-card">
+                        <div class="business-type">Interiors</div>
+                        <div class="business-content">
+                            <h3>Arkik Designs</h3>
+                            <div class="location">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Malappuram | Kerala</span>
+                            </div>
+                            <button class="view-more-btn">
+                                View More
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-shapes">
+                            <img src="images/Arkik Designs.jpeg" alt="Image 1" class="shape-1">
+                            <div class="shape-2"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="business-card">
+                        <div class="business-type">Vehicle Service</div>
+                        <div class="business-content">
+                            <h3>TVS Mobility Mahindra</h3>
+                            <div class="location">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Ernakulam | Kerala</span>
+                            </div>
+                            <button class="view-more-btn">
+                                View More
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-shapes">
+                            <img src="images/TVS Mobility Mahindra.jpeg" alt="Image 1" class="shape-1">
+                           
+                            <div class="shape-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="business-card">
+                        <div class="business-type">Interiors</div>
+                        <div class="business-content">
+                            <h3>Best Life Interiors</h3>
+                            <div class="location">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Thrissur  |  Kerala</span>
+                            </div>
+                            <button class="view-more-btn">
+                                View More
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-shapes">
+                            <img src="images/Best Life Interiors.webp" alt="Image 1" class="shape-1">
+                           
+                            <div class="shape-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="business-card">
+                        <div class="business-type">Construction</div>
+                        <div class="business-content">
+                            <h3>Feza Developers - Renovation & Construction Team</h3>
+                            <div class="location">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Ernakulam  |  Kerala</span>
+                            </div>
+                            <button class="view-more-btn">
+                                View More
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-shapes">
+                            <img src="images/Feza Developers - Renovation & Construction Team.png" alt="Image 1" class="shape-1">
+                            <div class="shape-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="business-card">
+                        <div class="business-type">Interiors</div>
+                        <div class="business-content">
+                            <h3>Feza interiors</h3>
+                            <div class="location">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Kakkanad  |  Kerala</span>
+                            </div>
+                            <button class="view-more-btn">
+                                View More
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-shapes">
+                            <img src="images/Feza interiors.jpeg" alt="Image 1" class="shape-1">
+                            <div class="shape-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="business-card">
+                        <div class="business-type">Mattress shop</div>
+                        <div class="business-content">
+                            <h3>Peps Exclusive Maniyamkulam Home Gallery</h3>
+                            <div class="location">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Kollam  |  Kerala</span>
+                            </div>
+                            <button class="view-more-btn">
+                                View More
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-shapes">
+                            <img src="images/Peps Exclusive Maniyamkulam Home Gallery.jpeg" alt="Image 1" class="shape-1">
+                             <div class="shape-2"></div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    </div>
+
+
+    
+<!-- Floating Button -->
+<button class="floating-button" data-bs-toggle="modal" data-bs-target="#postBusinessModal">
+    <i class="bi bi-plus-circle"></i>
+    Post Your Business
+</button>
+
+<!-- Post Business Modal -->
+<div class="modal fade" id="postBusinessModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add your Business</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="businessSubmitForm">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="businessName" placeholder="Business Name" required>
+                        <label for="businessName">Business Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <select class="form-select" id="businessCategory" required>
+                            <option value="">Select a category</option>
+                            <option>Healthcare</option>
+                            <option>Real Estate</option>
+                            <option>Education</option>
+                            <option>Technology</option>
+                            <option>Retail</option>
+                            <option>Automotive</option>
+                        </select>
+                        <label for="businessCategory">Business Category</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="location" placeholder="Location" required>
+                        <label for="location">Location</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="tel" class="form-control" id="mobile" placeholder="Mobile Number" required>
+                        <label for="mobile">Mobile Number</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" id="comment" placeholder="Comment" style="height: 100px"></textarea>
+                        <label for="comment">Comment</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 footer-content">
+                    <div class="d-flex align-items-center">
+                        <img src="images/ict-logo.png" alt="Logo" height="50">
+                        <h4 class="mb-0 ms-2">ICT Global Tech Pvt Ltd</h4>
+                    </div>
+                    
+                    <p class="footer-description">
+                        Discover the power of visibility with ICT Global Tech Pvt Ltd's global online business listing. Elevate your brand and connect with local customers effortlessly. Join us to unlock new opportunities.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> About</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Categories</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Quick Register</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#"><i class="bi bi-geo-alt"></i> Kerala, India</a></li>
+                        <li><a href="mailto:info@ictglobaltech.com"><i class="bi bi-envelope"></i> info@ictglobaltech.com</a></li>
+                        <li><a href="tel:+919876543210"><i class="bi bi-phone"></i>  +91-9446615211 | +91-9381740106</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright ©2025 All rights reserved | Developed by ICT Global Tech Pvt Ltd</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/business.js"></script>
+    
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
