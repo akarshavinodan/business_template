@@ -220,6 +220,12 @@
     background: url(../img/shape-bottom.png) center bottom no-repeat;
 }
 
+.hm {
+    border-radius: 50%;
+    border: 5px solid #007bff;
+    padding: 5px;
+}
+
 .page-header {
     margin-bottom: 6rem;
     padding: 12rem 0 6rem 0;
