@@ -15,3 +15,7 @@ scrollRightBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+function redirectToLogin() {
+    window.location.href = "login.html";
+  }
