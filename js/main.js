@@ -130,3 +130,34 @@ document.getElementById("reviewForm").addEventListener("submit", function(event)
     var reviewModal = new bootstrap.Modal(document.getElementById("reviewModal"));
     reviewModal.hide();
 });
+
+// ---------------------------------------------------------------------------------------------------------
+
+function generateQR() {
+    const url = window.location.href;
+    document.getElementById('shareUrl').value = url;
+    
+    // Clear previous QR code
+    document.getElementById('qrcode').innerHTML = '';
+    
+    // Generate new QR code
+    new QRCode(document.getElementById('qrcode'), {
+        text: url,
+        width: 200,
+        height: 200
+    });
+}
+
+function copyShareUrl() {
+    const shareUrl = document.getElementById('shareUrl');
+    shareUrl.select();
+    document.execCommand('copy');
+    
+    // Show feedback
+    const button = document.querySelector('#shareModal .btn-primary');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i>';
+    setTimeout(() => {
+        button.innerHTML = originalText;
+    }, 2000);
+}

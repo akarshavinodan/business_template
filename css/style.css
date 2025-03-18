@@ -578,3 +578,24 @@
     background-color: var(--primary);
     opacity: 0.8;
 }
+
+/* ------------------------------------------------------------------------------------------ */
+
+#qrcode img {
+    margin: 0 auto;
+}
+
+#shareUrl {
+    background-color: #f8f9fa;
+    cursor: text;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: var(--light);
+    border-radius: 15px 15px 0 0;
+}
