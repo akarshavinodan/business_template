@@ -98,3 +98,35 @@
     
 })(jQuery);
 
+
+// ---------------------------------------------------------------------------------
+document.getElementById("reviewForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get input values
+    let fullName = document.getElementById("fullName").value;
+    let location = document.getElementById("location").value;
+    let reviewText = document.getElementById("reviewText").value;
+    
+    // Create new review HTML
+    let newReview = `
+        <div class="review-item mb-3 pb-3 border-bottom">
+            <div class="d-flex align-items-center mb-2">
+                <img src="img/user.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                <div>
+                    <h6 class="mb-0">${fullName}</h6>
+                    <small class="text-muted">${location}</small><br>
+                    <small class="text-muted">Just now</small>
+                </div>
+            </div>
+            <p class="mb-0 text-muted">${reviewText}</p>
+        </div>`;
+
+    // Append new review to the list
+    document.getElementById("review-list").insertAdjacentHTML("beforeend", newReview);
+
+    // Clear form and close modal
+    document.getElementById("reviewForm").reset();
+    var reviewModal = new bootstrap.Modal(document.getElementById("reviewModal"));
+    reviewModal.hide();
+});
