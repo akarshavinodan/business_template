@@ -98,9 +98,13 @@
                         <button class="btn btn-primary rounded-pill px-4">
                             <i class="fa fa-share-alt me-2"></i> Share
                         </button>
-                        <button class="btn btn-outline-primary rounded-pill px-4">
+                       
+                        
+                        <!-- Update the Send Enquiry button to trigger the modal -->
+                        <button class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#enquiryModal">
                             <i class="fa fa-envelope me-2"></i> Send Enquiry
                         </button>
+                       
                     </div>
                 </div>
             </div>
@@ -262,63 +266,35 @@
     </div>
 </div>
 
-<style>
-.clinic-carousel .clinic-item img {
-    height: 400px;
-    object-fit: cover;
-}
 
-.gallery-grid img {
-    height: 100px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.gallery-grid img:hover {
-    opacity: 0.8;
-}
-
-.nav-pills .nav-link {
-    color: #555;
-    border-radius: 20px;
-    padding: 8px 20px;
-    margin-right: 10px;
-}
-
-.nav-pills .nav-link.active {
-    background-color: var(--primary);
-}
-
-.service-item-sm {
-    transition: all 0.3s;
-}
-
-.service-item-sm:hover {
-    background-color: var(--primary) !important;
-    color: white;
-}
-
-.service-item-sm:hover i {
-    color: white !important;
-}
-
-.opening-hours .day {
-    font-weight: 500;
-}
-
-.social-share a {
-    color: #555;
-    transition: all 0.3s;
-}
-
-.social-share a:hover {
-    color: var(--primary);
-}
-</style>
-
-
-
+ <!-- Add this modal code right after the main content div -->
+ <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="enquiryModalLabel">Send an enquiry to Beau Aesthetica Clinic, Kochi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control rounded-pill" placeholder="Your Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control rounded-pill" placeholder="Your Location">
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control rounded-pill" placeholder="Phone Number">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary rounded-pill w-100">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

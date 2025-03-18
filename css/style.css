@@ -493,3 +493,88 @@
     margin-top: 15px;
     color: #555;
 }
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+.clinic-carousel .clinic-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.gallery-grid img {
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gallery-grid img:hover {
+    opacity: 0.8;
+}
+
+.nav-pills .nav-link {
+    color: #555;
+    border-radius: 20px;
+    padding: 8px 20px;
+    margin-right: 10px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary);
+}
+
+.service-item-sm {
+    transition: all 0.3s;
+}
+
+.service-item-sm:hover {
+    background-color: var(--primary) !important;
+    color: white;
+}
+
+.service-item-sm:hover i {
+    color: white !important;
+}
+
+.opening-hours .day {
+    font-weight: 500;
+}
+
+.social-share a {
+    color: #555;
+    transition: all 0.3s;
+}
+
+.social-share a:hover {
+    color: var(--primary);
+}
+
+.modal-content {
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: var(--light);
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-body .form-control {
+    padding: 12px 20px;
+}
+
+.modal-body textarea.form-control {
+    border-radius: 15px;
+}
+
+.btn-close {
+    background-color: var(--primary);
+    opacity: 1;
+    padding: 0.6rem;
+    border-radius: 50%;
+}
+
+.btn-close:hover {
+    background-color: var(--primary);
+    opacity: 0.8;
+}
