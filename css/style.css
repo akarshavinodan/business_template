@@ -599,3 +599,8 @@
     background-color: var(--light);
     border-radius: 15px 15px 0 0;
 }
+
+.review{
+    height: 400px;
+    overflow-y: auto;
+}
