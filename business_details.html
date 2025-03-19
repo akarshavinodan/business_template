@@ -99,6 +99,142 @@
                 </div>
             </div>
         </header>
+
+        
+<!-- Content -->
+<div class="content-wrapper" style="background-color: #f0fafa;">
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h1 class="page-title">Business Information</h1>
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle me-2"></i>
+                    The changes made in this page will reflect in your business listing page only after it is verified by the ICT business listing admin
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <form id="businessForm">
+                    <!-- Basic Information -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Business Name</label>
+                            <input type="text" class="form-control" value="TVS Mobility Mahindra" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label">State</label>
+                            <input type="text" class="form-control" value="Kerala" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label">City</label>
+                            <input type="text" class="form-control" value="Ernakulam" required>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Address</label>
+                            <textarea class="form-control" rows="2" required>Seaport Airport Road, Thrikkakara, Cochin 682021, Kakkanad, India, Kerala</textarea>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Mobile</label>
+                            <input type="tel" class="form-control" value="+918111887797" required>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">About Business</label>
+                            <textarea class="form-control" rows="3">Vehicle service</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <h5 class="mb-3">Social Media</h5>
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-facebook text-primary"></i> Facebook Profile
+                            </label>
+                            <input type="url" class="form-control" placeholder="Enter Facebook URL">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-whatsapp text-success"></i> WhatsApp Number
+                            </label>
+                            <input type="tel" class="form-control" placeholder="Enter WhatsApp number">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-instagram text-danger"></i> Instagram Profile
+                            </label>
+                            <input type="url" class="form-control" placeholder="Enter Instagram URL">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">
+                                <i class="bi bi-youtube text-danger"></i> YouTube Link
+                            </label>
+                            <input type="url" class="form-control" placeholder="Enter YouTube URL">
+                        </div>
+                    </div>
+
+                    <!-- Gallery -->
+                    <h5 class="mb-3">Gallery Images</h5>
+                    <div class="row mb-4">
+                        <div class="col-md-2 col-sm-4 col-6 mb-3">
+                            <div class="gallery-upload">
+                                <input type="file" class="gallery-input" accept="image/*">
+                                <div class="gallery-preview">
+                                    <i class="bi bi-plus-circle"></i>
+                                    <span>Upload Image</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Repeat for other gallery slots -->
+                    </div>
+
+                    <!-- Business Hours -->
+                    <h5 class="mb-3">Business Hours</h5>
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="business-hours">
+                                <!-- Repeat for each day -->
+                                <div class="day-row mb-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sunday">
+                                        <label class="form-check-label" for="sunday">Sunday</label>
+                                    </div>
+                                    <div class="hours-input">
+                                        <input type="time" class="form-control form-control-sm">
+                                        <span>to</span>
+                                        <input type="time" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                <!-- Repeat for other days -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meta Information -->
+                    <h5 class="mb-3">Meta Information</h5>
+                    <div class="row mb-4">
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Meta Keywords</label>
+                            <input type="text" class="form-control" value="Vehicle service">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Meta Description</label>
+                            <textarea class="form-control" rows="3">Vehicle service</textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save me-2"></i>Save Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
     </div>
 </div>
 
@@ -129,3 +265,65 @@
 
 </body>
 </html>
+
+<style>
+.gallery-upload {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-upload:hover {
+    border-color: var(--primary-color);
+}
+
+.gallery-input {
+    display: none;
+}
+
+.gallery-preview {
+    color: #666;
+}
+
+.gallery-preview i {
+    font-size: 24px;
+    color: #999;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.gallery-preview span {
+    font-size: 12px;
+}
+
+.business-hours .day-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.business-hours .hours-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.business-hours .hours-input span {
+    color: #666;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.alert {
+    border-left: 4px solid #0dcaf0;
+}
+</style>
