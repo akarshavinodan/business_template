@@ -304,35 +304,38 @@
 
 /* Responsive Styles */
 /* Update Sidebar Styles */
+/* Update sidebar styles for mobile */
 @media (max-width: 991.98px) {
     .sidebar {
         width: var(--sidebar-collapsed-width);
         left: 0;
+        transition: all 0.3s ease;
     }
 
-    .sidebar .nav-text,
+    .sidebar.expanded {
+        width: var(--sidebar-width);
+    }
+
+    .sidebar.expanded .nav-text {
+        display: block;
+    }
+
+    .sidebar.expanded .nav-link {
+        justify-content: flex-start;
+        padding: 12px 20px;
+    }
+
     .sidebar .logo-img {
-        display: none;
-    }
-
-    .sidebar .nav-link {
-        justify-content: center;
-        padding: 12px 0;
+        display: block !important;
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
     }
 
     .sidebar .toggle-btn {
-        display: none;
-    }
-
-    .main-content {
-        margin-left: var(--sidebar-collapsed-width) !important;
-    }
-
-    .mobile-toggle {
-        display: none; /* Hide mobile toggle button */
+        display: block !important;
     }
 }
-
 @media (max-width: 576px) {
     .sidebar {
         width: var(--sidebar-collapsed-width);
@@ -465,21 +468,20 @@
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('main-content');
     const toggleBtn = document.getElementById('toggle-btn');
-    const mobileToggle = document.getElementById('mobile-toggle');
 
     toggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-        mainContent.classList.toggle('expanded');
+        if (window.innerWidth <= 991.98) {
+            sidebar.classList.toggle('expanded');
+        } else {
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+        }
     });
 
-    mobileToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('mobile-active');
-    });
-
-    // Close sidebar on window resize if in mobile view
+    // Close sidebar on window resize
     window.addEventListener('resize', () => {
         if (window.innerWidth > 991.98) {
-            sidebar.classList.remove('mobile-active');
+            sidebar.classList.remove('expanded');
         }
     });
 </script>
