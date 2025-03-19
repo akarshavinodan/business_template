@@ -188,169 +188,85 @@
                         </div>
                     </div>
                 </div>
+
+             <!-- Quick Access Cards -->
+<div class="row mt-4">
+    <div class="col-12">
+        <h5 class="section-title mb-4">Quick Access</h5>
+    </div>
+    <!-- First Row -->
+    <div class="col-md-6 mb-4">
+        <div class="quick-card business-card">
+            <div class="icon-wrapper">
+                <i class="bi bi-buildings"></i>
+            </div>
+            <div class="card-content">
+                <h6>Business Details</h6>
+                <p class="text-muted mb-0">Manage your business information</p>
+            </div>
+            <div class="card-action">
+                <a href="#" class="stretched-link">
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="quick-card card-details">
+            <div class="icon-wrapper">
+                <i class="bi bi-credit-card"></i>
+            </div>
+            <div class="card-content">
+                <h6>Card Details</h6>
+                <p class="text-muted mb-0">View and update payment info</p>
+            </div>
+            <div class="card-action">
+                <a href="#" class="stretched-link">
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Second Row -->
+    <div class="col-md-6 mb-4">
+        <div class="quick-card enquiries">
+            <div class="icon-wrapper">
+                <i class="bi bi-envelope"></i>
+            </div>
+            <div class="card-content">
+                <h6>Enquiries</h6>
+                <p class="text-muted mb-0">Check customer inquiries</p>
+            </div>
+            <div class="card-action">
+                <a href="#" class="stretched-link">
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="quick-card deals">
+            <div class="icon-wrapper">
+                <i class="bi bi-tag"></i>
+            </div>
+            <div class="card-content">
+                <h6>Deals</h6>
+                <p class="text-muted mb-0">Manage special offers</p>
+            </div>
+            <div class="card-action">
+                <a href="#" class="stretched-link">
+                    <i class="bi bi-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-    .package-card {
-        border: none;
-        border-radius: 16px;
-        margin-bottom: 20px;
-        background: linear-gradient(to right, #ffffff, #f8f9fa);
-        transition: transform 0.2s;
-    }
+            </div>
+        </div>
+    </div>
+</div>
 
-    .package-detail {
-        padding: 15px;
-        background: #ffffff;
-        border-radius: 12px;
-        border: 1px solid rgba(0,0,0,0.05);
-        height: 100%;
-    }
-
-    /* Add responsive styles */
-    @media (max-width: 768px) {
-        .page-title {
-            font-size: 1.5rem;
-        }
-
-        .card-body {
-            padding: 15px !important;
-        }
-
-        .package-detail {
-            padding: 12px;
-        }
-
-        .package-detail i {
-            font-size: 1.25rem;
-        }
-
-        .package-progress {
-            padding: 15px;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            padding: 0.5rem 0.75rem !important;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .d-flex.justify-content-between.align-items-center {
-            flex-direction: column;
-            align-items: flex-start !important;
-            gap: 10px;
-        }
-
-        .badge {
-            align-self: flex-start;
-        }
-
-        .package-detail {
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .package-detail i {
-            margin: 0 auto;
-        }
-
-        .progress {
-            height: 8px !important;
-        }
-
-        .package-progress .d-flex {
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .package-progress .badge {
-            margin-top: 5px;
-        }
-    }
-
-    @media (max-width: 400px) {
-        .page-title {
-            font-size: 1.25rem;
-        }
-
-        .card-title {
-            font-size: 1rem;
-        }
-
-        .package-detail h6 {
-            font-size: 0.875rem;
-        }
-
-        .package-detail label {
-            font-size: 0.75rem;
-        }
-    }
-    .package-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .package-detail {
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 12px;
-        border: 1px solid rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-    }
-
-    .package-detail:hover {
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        border-color: var(--primary-color);
-    }
-
-    .package-detail i {
-        font-size: 1.5rem;
-        display: block;
-    }
-
-    .package-detail label {
-        font-size: 0.875rem;
-        margin-bottom: 5px;
-        display: block;
-    }
-
-    .package-detail h6 {
-        margin: 0;
-        color: #333;
-        font-weight: 600;
-    }
-
-    .progress {
-        background-color: #e9ecef;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .progress-bar {
-        border-radius: 10px;
-        background: linear-gradient(to right, var(--primary-color), #ff6363);
-    }
-
-    .package-progress {
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 12px;
-        border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .card-title {
-        color: #333;
-        font-weight: 600;
-    }
-
-    .badge {
-        font-weight: 500;
-        border-radius: 8px;
-    }
-</style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
