@@ -101,213 +101,195 @@
         </header>
 
         
-<!-- Content -->
-<div class="content-wrapper" style="background-color: #f0fafa;">
+<!-- Content Section -->
+<div class="content-wrapper" style="background-color: #f8f9fa;">
     <div class="container-fluid">
+        <!-- Header -->
         <div class="row mb-4">
             <div class="col-12">
                 <h1 class="page-title">Business Information</h1>
                 <div class="alert alert-info">
                     <i class="bi bi-info-circle me-2"></i>
-                    The changes made in this page will reflect in your business listing page only after it is verified by the ICT business listing admin
+                    Changes require admin verification before being displayed
                 </div>
             </div>
         </div>
 
-        <div class="card shadow-sm">
-            <div class="card-body p-4">
-                <form id="businessForm">
-                    <!-- Basic Information -->
-                    <div class="row mb-4">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Business Name</label>
-                            <input type="text" class="form-control" value="TVS Mobility Mahindra" required>
+        <!-- Basic Information Card -->
+        <div class="info-card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>Basic Information</h5>
+                <button class="btn btn-sm btn-outline-primary" onclick="openEditModal('basic')">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="info-item">
+                            <label>Business Name</label>
+                            <p>TVS Mobility Mahindra</p>
                         </div>
-                        <div class="col-md-3 mb-3">
-                            <label class="form-label">State</label>
-                            <input type="text" class="form-control" value="Kerala" required>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label class="form-label">City</label>
-                            <input type="text" class="form-control" value="Ernakulam" required>
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Address</label>
-                            <textarea class="form-control" rows="2" required>Seaport Airport Road, Thrikkakara, Cochin 682021, Kakkanad, India, Kerala</textarea>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Mobile</label>
-                            <input type="tel" class="form-control" value="+918111887797" required>
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">About Business</label>
-                            <textarea class="form-control" rows="3">Vehicle service</textarea>
+                        <div class="info-item">
+                            <label>Address</label>
+                            <p>Seaport Airport Road, Thrikkakara, Cochin 682021, Kakkanad, India, Kerala</p>
                         </div>
                     </div>
-
-                    <!-- Social Media -->
-                    <h5 class="mb-3">Social Media</h5>
-                    <div class="row mb-4">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">
-                                <i class="bi bi-facebook text-primary"></i> Facebook Profile
-                            </label>
-                            <input type="url" class="form-control" placeholder="Enter Facebook URL">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">
-                                <i class="bi bi-whatsapp text-success"></i> WhatsApp Number
-                            </label>
-                            <input type="tel" class="form-control" placeholder="Enter WhatsApp number">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">
-                                <i class="bi bi-instagram text-danger"></i> Instagram Profile
-                            </label>
-                            <input type="url" class="form-control" placeholder="Enter Instagram URL">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">
-                                <i class="bi bi-youtube text-danger"></i> YouTube Link
-                            </label>
-                            <input type="url" class="form-control" placeholder="Enter YouTube URL">
-                        </div>
-                    </div>
-
-                    <!-- Gallery -->
-                    <h5 class="mb-3">Gallery Images</h5>
-                    <div class="row mb-4">
-                        <div class="col-md-2 col-sm-4 col-6 mb-3">
-                            <div class="gallery-upload">
-                                <input type="file" class="gallery-input" accept="image/*">
-                                <div class="gallery-preview">
-                                    <i class="bi bi-plus-circle"></i>
-                                    <span>Upload Image</span>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="info-item">
+                                    <label>State</label>
+                                    <p>Kerala</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="info-item">
+                                    <label>City</label>
+                                    <p>Ernakulam</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Repeat for other gallery slots -->
+                        <div class="info-item">
+                            <label>Mobile</label>
+                            <p>+918111887797</p>
+                        </div>
+                        <div class="info-item">
+                            <label>About Business</label>
+                            <p>Vehicle service</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <!-- Business Hours -->
-                    <h5 class="mb-3">Business Hours</h5>
-                    <div class="row mb-4">
-                        <div class="col-12">
-                            <div class="business-hours">
-                                <!-- Repeat for each day -->
-                                <div class="day-row mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="sunday">
-                                        <label class="form-check-label" for="sunday">Sunday</label>
-                                    </div>
-                                    <div class="hours-input">
-                                        <input type="time" class="form-control form-control-sm">
-                                        <span>to</span>
-                                        <input type="time" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-                                <div class="day-row mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="monday">
-                                        <label class="form-check-label" for="sunday">Monday</label>
-                                    </div>
-                                    <div class="hours-input">
-                                        <input type="time" class="form-control form-control-sm">
-                                        <span>to</span>
-                                        <input type="time" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-
-                                <div class="day-row mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="tuesday">
-                                        <label class="form-check-label" for="sunday">Tuesday</label>
-                                    </div>
-                                    <div class="hours-input">
-                                        <input type="time" class="form-control form-control-sm">
-                                        <span>to</span>
-                                        <input type="time" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-
-                                <div class="day-row mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="wednesday">
-                                        <label class="form-check-label" for="sunday">Wednesday</label>
-                                    </div>
-                                    <div class="hours-input">
-                                        <input type="time" class="form-control form-control-sm">
-                                        <span>to</span>
-                                        <input type="time" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-
-                                <div class="day-row mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="thursday">
-                                        <label class="form-check-label" for="sunday">Thursday</label>
-                                    </div>
-                                    <div class="hours-input">
-                                        <input type="time" class="form-control form-control-sm">
-                                        <span>to</span>
-                                        <input type="time" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-
-                                <div class="day-row mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="friday">
-                                        <label class="form-check-label" for="sunday">Friday</label>
-                                    </div>
-                                    <div class="hours-input">
-                                        <input type="time" class="form-control form-control-sm">
-                                        <span>to</span>
-                                        <input type="time" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-
-                                <div class="day-row mb-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="saturday">
-                                        <label class="form-check-label" for="sunday">Saturday</label>
-                                    </div>
-                                    <div class="hours-input">
-                                        <input type="time" class="form-control form-control-sm">
-                                        <span>to</span>
-                                        <input type="time" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-
+        <!-- Social Media Card -->
+        <div class="info-card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>Social Media</h5>
+                <button class="btn btn-sm btn-outline-primary" onclick="openEditModal('social')">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="social-item">
+                            <i class="bi bi-facebook"></i>
+                            <div>
+                                <label>Facebook Profile</label>
+                                <p>https://www.facebook.com/tvsmobilitymahindra/</p>
                             </div>
                         </div>
                     </div>
+                    <!-- Similar blocks for other social media -->
+                </div>
+            </div>
+        </div>
 
-                    <!-- Meta Information -->
-                    <h5 class="mb-3">Meta Information</h5>
-                    <div class="row mb-4">
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Meta Keywords</label>
-                            <input type="text" class="form-control" value="Vehicle service">
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Meta Description</label>
-                            <textarea class="form-control" rows="3">Vehicle service</textarea>
-                        </div>
-                    </div>
+        <!-- Add other sections similarly -->
+    </div>
+</div>
 
-                    <div class="text-end">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-save me-2"></i>Save Changes
-                        </button>
-                    </div>
-                </form>
+<!-- Edit Modals -->
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Dynamic form content will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="saveChanges()">Save Changes</button>
             </div>
         </div>
     </div>
 </div>
 
-    </div>
-</div>
+<style>
+.info-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.info-card .card-header {
+    background: #fff;
+    padding: 1.25rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-card .card-body {
+    padding: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1.5rem;
+}
+
+.info-item label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.info-item p {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.social-item i {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.social-item label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+.social-item p {
+    margin: 0;
+    color: #333;
+}
+</style>
+
+<script>
+function openEditModal(type) {
+    const modal = new bootstrap.Modal(document.getElementById('editModal'));
+    // Load appropriate form based on type
+    modal.show();
+}
+
+function saveChanges() {
+    // Handle save logic
+    const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+    modal.hide();
+}
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
