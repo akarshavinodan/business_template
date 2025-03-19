@@ -1,0 +1,94 @@
+.info-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.info-card .card-header {
+    background: #fff;
+    padding: 1.25rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-card .card-body {
+    padding: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1.5rem;
+}
+
+.info-item label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.info-item p {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.social-item i {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.social-item label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+.social-item p {
+    margin: 0;
+    color: #333;
+}
+
+
+
+.business-hours .day-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.business-hours .hours-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.business-hours .hours-input span {
+    color: #666;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+.alert {
+    border-left: 4px solid #0dcaf0;
+}

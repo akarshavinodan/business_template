@@ -161,3 +161,75 @@ function copyShareUrl() {
         button.innerHTML = originalText;
     }, 2000);
 }
+
+// ------------------------------------------------------------------------------------------------
+ // Sidebar Toggle
+ const sidebar = document.getElementById('sidebar');
+ const mainContent = document.getElementById('main-content');
+ const toggleBtn = document.getElementById('toggle-btn');
+
+ toggleBtn.addEventListener('click', () => {
+     if (window.innerWidth <= 991.98) {
+         sidebar.classList.toggle('expanded');
+     } else {
+         sidebar.classList.toggle('collapsed');
+         mainContent.classList.toggle('expanded');
+     }
+ });
+
+ // Close sidebar on window resize
+ window.addEventListener('resize', () => {
+     if (window.innerWidth > 991.98) {
+         sidebar.classList.remove('expanded');
+     }
+ });
+
+//  -----------------------------------------------------------------------------------------------
+
+
+function openEditModal(type) {
+    const modal = new bootstrap.Modal(document.getElementById('editModal'));
+    // Load appropriate form based on type
+    modal.show();
+}
+
+function saveChanges() {
+    // Handle save logic
+    const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+    modal.hide();
+}
+
+
+function openEditModal(type) {
+    if (type === 'basic') {
+        const modal = new bootstrap.Modal(document.getElementById('basicInfoModal'));
+        modal.show();
+    } else if (type === 'social') {
+        const modal = new bootstrap.Modal(document.getElementById('socialMediaModal'));
+        modal.show();
+    }
+}
+
+function saveBasicInfo() {
+    // Update basic information in the card
+    document.querySelector('.info-item:has(label:contains("Business Name")) p').textContent = document.getElementById('businessName').value;
+    document.querySelector('.info-item:has(label:contains("State")) p').textContent = document.getElementById('state').value;
+    document.querySelector('.info-item:has(label:contains("City")) p').textContent = document.getElementById('city').value;
+    document.querySelector('.info-item:has(label:contains("Address")) p').textContent = document.getElementById('address').value;
+    document.querySelector('.info-item:has(label:contains("Mobile")) p').textContent = document.getElementById('mobile').value;
+    document.querySelector('.info-item:has(label:contains("About Business")) p').textContent = document.getElementById('about').value;
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('basicInfoModal'));
+    modal.hide();
+}
+
+function saveSocialMedia() {
+    // Update social media in the card
+    document.querySelector('.social-item:has(label:contains("Facebook")) p').textContent = document.getElementById('facebook').value || 'Not Added';
+    document.querySelector('.social-item:has(label:contains("Instagram")) p').textContent = document.getElementById('instagram').value || 'Not Added';
+    document.querySelector('.social-item:has(label:contains("WhatsApp")) p').textContent = document.getElementById('whatsapp').value || 'Not Added';
+    document.querySelector('.social-item:has(label:contains("YouTube")) p').textContent = document.getElementById('youtube').value || 'Not Added';
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('socialMediaModal'));
+    modal.hide();
+}
