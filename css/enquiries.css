@@ -1,0 +1,77 @@
+.enquiry-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.enquiry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.enquiry-icon {
+    width: 80px;
+    height: 80px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.enquiry-icon i {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+.enquiry-card:hover .enquiry-icon {
+    background: #007bff;
+}
+
+.enquiry-card:hover .enquiry-icon i {
+    color: #fff;
+}
+
+.enquiry-card h3 {
+    margin-bottom: 0.5rem;
+    color: #212529;
+}
+
+.enquiry-card p {
+    color: #6c757d;
+    margin: 0;
+}
+
+.enquiries-list {
+    min-height: 200px;
+}
+
+.enquiry-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.enquiry-item:last-child {
+    margin-bottom: 0;
+}
+
+.no-enquiries {
+    text-align: center;
+    padding: 3rem;
+    color: #6c757d;
+}
+
+.no-enquiries i {
+    font-size: 3rem;
+    color: #dee2e6;
+    margin-bottom: 1rem;
+}
