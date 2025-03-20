@@ -176,6 +176,136 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Business Card Contact Details -->
+                <div class="info-card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Business Card Contact Details</h5>
+                        <button class="btn btn-sm btn-outline-primary" onclick="openEditModal('cardContact')">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="bi bi-telephone"></i>
+                                    <div>
+                                        <label>Phone Number</label>
+                                        <p>+918111887797</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="bi bi-envelope"></i>
+                                    <div>
+                                        <label>Email</label>
+                                        <p>ullas.baby@tvs.in</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="bi bi-globe"></i>
+                                    <div>
+                                        <label>Website</label>
+                                        <p>Not Added</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="bi bi-facebook"></i>
+                                    <div>
+                                        <label>Facebook Profile</label>
+                                        <p>https://www.facebook.com/tvsmobilitymahindra/</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <div>
+                                        <label>WhatsApp</label>
+                                        <p>+918111887797</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="bi bi-instagram"></i>
+                                    <div>
+                                        <label>Instagram Profile</label>
+                                        <p>https://www.instagram.com/tvs.mobilitymahindra/</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-item">
+                                    <i class="bi bi-twitter"></i>
+                                    <div>
+                                        <label>Twitter Profile</label>
+                                        <p>Not Added</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Details Modal -->
+                <div class="modal fade" id="cardContactModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Contact Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="cardContactForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phoneNumber" value="+918111887797">
+                                            <small class="text-muted">Add country code with number</small>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" value="ullas.baby@tvs.in">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Website</label>
+                                            <input type="url" class="form-control" id="website" placeholder="Enter your website link">
+                                            <small class="text-muted">Add only domain name (eg: www.ictglobaltech.com)</small>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Facebook Profile Link</label>
+                                            <input type="url" class="form-control" id="facebook" value="https://www.facebook.com/tvsmobilitymahindra/">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">WhatsApp Number</label>
+                                            <input type="tel" class="form-control" id="whatsapp" value="+918111887797">
+                                            <small class="text-muted">Add country code with number</small>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Instagram Profile Link</label>
+                                            <input type="url" class="form-control" id="instagram" value="https://www.instagram.com/tvs.mobilitymahindra/">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Twitter Profile Link</label>
+                                            <input type="url" class="form-control" id="twitter" placeholder="Enter Twitter profile URL">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary" onclick="saveCardContact()">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -24,6 +24,9 @@ function openEditModal(type) {
     if (type === 'cardBasic') {
         const modal = new bootstrap.Modal(document.getElementById('cardBasicModal'));
         modal.show();
+    }else if (type === 'cardContact') {
+        const modal = new bootstrap.Modal(document.getElementById('cardContactModal'));
+        modal.show();
     }
 }
 
@@ -54,5 +57,22 @@ function saveCardBasic() {
 
     // Close modal
     const modal = bootstrap.Modal.getInstance(document.getElementById('cardBasicModal'));
+    modal.hide();
+}
+
+
+function saveCardContact() {
+    const fields = ['phoneNumber', 'email', 'website', 'facebook', 'whatsapp', 'instagram', 'twitter'];
+    
+    fields.forEach(field => {
+        const value = document.getElementById(field).value;
+        const displayValue = value || 'Not Added';
+        const contactItem = document.querySelector(`.contact-item:has(label:contains("${field.charAt(0).toUpperCase() + field.slice(1).replace('_', ' ')}")) p`);
+        if (contactItem) {
+            contactItem.textContent = displayValue;
+        }
+    });
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('cardContactModal'));
     modal.hide();
 }
