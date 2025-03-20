@@ -82,19 +82,32 @@ function saveCardBasic() {
 
 
 function saveCardContact() {
+    // Get all contact field values
     const fields = ['phoneNumber', 'email', 'website', 'facebook', 'whatsapp', 'instagram', 'twitter'];
     
+    // Update each contact field in the card
     fields.forEach(field => {
         const value = document.getElementById(field).value;
         const displayValue = value || 'Not Added';
-        const contactItem = document.querySelector(`.contact-item:has(label:contains("${field.charAt(0).toUpperCase() + field.slice(1).replace('_', ' ')}")) p`);
-        if (contactItem) {
-            contactItem.textContent = displayValue;
-        }
+        
+        // Find the corresponding contact item and update its content
+        const contactItems = document.querySelectorAll('.contact-item');
+        contactItems.forEach(item => {
+            const label = item.querySelector('label').textContent.toLowerCase();
+            const p = item.querySelector('p');
+            
+            if (label.includes(field.toLowerCase())) {
+                p.textContent = displayValue;
+            }
+        });
     });
 
-    const modal = bootstrap.Modal.getInstance(document.getElementById('cardContactModal'));
-    modal.hide();
+    // Close the modal properly
+    const cardContactModal = document.getElementById('cardContactModal');
+    const modal = bootstrap.Modal.getInstance(cardContactModal);
+    if (modal) {
+        modal.hide();
+    }
 }
 
 
