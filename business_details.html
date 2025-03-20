@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <!-- Basic Information Card -->
+<!-------------------------------------- Basic Information Card----------------------------------------------- -->
         <div class="info-card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5>Basic Information</h5>
@@ -164,7 +164,9 @@
             </div>
         </div>
 
-        <!-- Social Media Card -->
+<!-------------------------------------- Basic Information Card ends----------------------------------------------- -->
+
+<!--------------------------------------- Social Media Card ----------------------------------------------------->
         <div class="info-card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5>Social Media</h5>
@@ -218,7 +220,11 @@
             </div>
         </div>
 
-        <!-- Add after the Social Media Card -->
+<!--------------------------------------- Social Media Card ends----------------------------------------------------->
+
+
+<!-- --------------------------------------------- Gallery  Card--------------------------------------------- -->
+
         <div class="info-card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5>Gallery</h5>
@@ -242,42 +248,12 @@
             </div>
         </div>
 
-        <!-- Add Gallery Modal -->
-        <div class="modal fade" id="galleryModal" tabindex="-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Edit Gallery</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="galleryForm">
-                            <div class="row g-3">
-                                <div class="col-12 mb-3">
-                                    <div class="gallery-upload" onclick="document.getElementById('galleryInput').click()">
-                                        <i class="bi bi-cloud-upload"></i>
-                                        <p>Click to upload images or drag and drop</p>
-                                        <span>Maximum file size: 5MB (JPG, PNG)</span>
-                                        <input type="file" id="galleryInput" class="gallery-input" multiple accept="image/*" onchange="handleGalleryUpload(event)">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row g-3" id="galleryPreview"></div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" onclick="saveGallery()">Save Changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!----------------------------------------- business hours section--------------------------------- -->
+<!-- --------------------------------------------- Gallery Card ends--------------------------------------------- -->
 
-        <!-- After the Gallery Card -->
+
+<!----------------------------------------- business hours section-------------------------------------------- -->
+
 <div class="info-card mb-4">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h5>Business Hours</h5>
@@ -325,7 +301,163 @@
     </div>
 </div>
 
-<!-- Business Hours Modal -->
+
+<!----------------------------------------- business hours section ends-------------------------------------------- -->
+
+
+<!-- ------------------------------------------meta information card--------------------------------------------------- -->
+
+
+<div class="info-card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5>Meta Information</h5>
+        <button class="btn btn-sm btn-outline-primary" onclick="openEditModal('meta')">
+            <i class="bi bi-pencil-square"></i> Edit
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="meta-info" id="metaContainer">
+            <div class="info-item">
+                <label>Meta Keywords</label>
+                <p>Vehicle service</p>
+            </div>
+            <div class="info-item">
+                <label>Meta Description</label>
+                <p>Vehicle service</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ------------------------------------------meta information card ends--------------------------------------------------- -->
+
+
+<!-- --------------------------------------------Basic Information Modal ----------------------------------------->
+<div class="modal fade" id="basicInfoModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Basic Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="basicInfoForm">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label class="form-label">Business Name</label>
+                            <input type="text" class="form-control" id="businessName" value="TVS Mobility Mahindra">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">State</label>
+                            <input type="text" class="form-control" id="state" value="Kerala">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" value="Ernakulam">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="2">Seaport Airport Road, Thrikkakara, Cochin 682021, Kakkanad, India, Kerala</textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Mobile</label>
+                            <input type="tel" class="form-control" id="mobile" value="+918111887797">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">About Business</label>
+                            <textarea class="form-control" id="about" rows="3">Vehicle service</textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="saveBasicInfo()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- --------------------------------Social Media Modal ------------------------------------------------------->
+
+<div class="modal fade" id="socialMediaModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Social Media</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="socialForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Facebook Profile</label>
+                            <input type="url" class="form-control" id="facebook" value="https://www.facebook.com/tvsmobilitymahindra/">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Instagram Profile</label>
+                            <input type="url" class="form-control" id="instagram" value="https://www.instagram.com/tvs.mobilitymahindra/">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">WhatsApp Number</label>
+                            <input type="tel" class="form-control" id="whatsapp" value="+918111887797">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">YouTube Link</label>
+                            <input type="url" class="form-control" id="youtube" placeholder="Enter YouTube URL">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="saveSocialMedia()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--------------------------------------- Add Gallery Modal -------------------------------------------------->
+
+
+        <div class="modal fade" id="galleryModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Gallery</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="galleryForm">
+                            <div class="row g-3">
+                                <div class="col-12 mb-3">
+                                    <div class="gallery-upload" onclick="document.getElementById('galleryInput').click()">
+                                        <i class="bi bi-cloud-upload"></i>
+                                        <p>Click to upload images or drag and drop</p>
+                                        <span>Maximum file size: 5MB (JPG, PNG)</span>
+                                        <input type="file" id="galleryInput" class="gallery-input" multiple accept="image/*" onchange="handleGalleryUpload(event)">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row g-3" id="galleryPreview"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="saveGallery()">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!------------------------------------------------- Business Hours Modal ------------------------------------>
+
+
 <div class="modal fade" id="hoursModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -383,29 +515,11 @@
 </div>
 
 
-    <!-- Add after the Business Hours Card -->
-    <div class="info-card mb-4">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h5>Meta Information</h5>
-            <button class="btn btn-sm btn-outline-primary" onclick="openEditModal('meta')">
-                <i class="bi bi-pencil-square"></i> Edit
-            </button>
-        </div>
-        <div class="card-body">
-            <div class="meta-info" id="metaContainer">
-                <div class="info-item">
-                    <label>Meta Keywords</label>
-                    <p>Vehicle service</p>
-                </div>
-                <div class="info-item">
-                    <label>Meta Description</label>
-                    <p>Vehicle service</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+   
 
-    <!-- Meta Information Modal -->
+<!---------------------------------Meta Information Modal ------------------------------------------------>
+
     <div class="modal fade" id="metaModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -439,91 +553,9 @@
     </div>
 </div>
 
-<!-- Basic Information Modal -->
-<div class="modal fade" id="basicInfoModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit Basic Information</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="basicInfoForm">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <label class="form-label">Business Name</label>
-                            <input type="text" class="form-control" id="businessName" value="TVS Mobility Mahindra">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">State</label>
-                            <input type="text" class="form-control" id="state" value="Kerala">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">City</label>
-                            <input type="text" class="form-control" id="city" value="Ernakulam">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">Address</label>
-                            <textarea class="form-control" id="address" rows="2">Seaport Airport Road, Thrikkakara, Cochin 682021, Kakkanad, India, Kerala</textarea>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Mobile</label>
-                            <input type="tel" class="form-control" id="mobile" value="+918111887797">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">About Business</label>
-                            <textarea class="form-control" id="about" rows="3">Vehicle service</textarea>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="saveBasicInfo()">Save Changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Social Media Modal -->
-<div class="modal fade" id="socialMediaModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit Social Media</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="socialForm">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label">Facebook Profile</label>
-                            <input type="url" class="form-control" id="facebook" value="https://www.facebook.com/tvsmobilitymahindra/">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Instagram Profile</label>
-                            <input type="url" class="form-control" id="instagram" value="https://www.instagram.com/tvs.mobilitymahindra/">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">WhatsApp Number</label>
-                            <input type="tel" class="form-control" id="whatsapp" value="+918111887797">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">YouTube Link</label>
-                            <input type="url" class="form-control" id="youtube" placeholder="Enter YouTube URL">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="saveSocialMedia()">Save Changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
+<!-- -------------------------------------------------------------------------------------------------------- -->
 
 <script>
     const sidebar = document.getElementById('sidebar');
