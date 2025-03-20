@@ -30,6 +30,9 @@ function showEnquiries(type) {
     const enquiriesContainer = document.getElementById('enquiriesContainer');
     const title = type === 'business' ? 'Business' : 'Card';
     
+    // Show the container when card is clicked
+    enquiriesContainer.style.display = 'block';
+    
     // Example data - replace with actual data
     const enquiries = []; // Your enquiries data would go here
     
