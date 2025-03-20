@@ -20,16 +20,34 @@
  });
 
  function showEditForm() {
-     // Populate edit form with current values
-     document.getElementById('editBusinessName').value = document.getElementById('viewBusinessName').textContent;
-     document.getElementById('editFullName').value = document.getElementById('viewFullName').textContent;
-     document.getElementById('editEmail').value = document.getElementById('viewEmail').textContent;
-     document.getElementById('editPhone').value = document.getElementById('viewPhone').textContent;
+    // Populate edit form with current values
+    document.getElementById('editBusinessName').value = document.getElementById('viewBusinessName').textContent;
+    document.getElementById('editFullName').value = document.getElementById('viewFullName').textContent;
+    document.getElementById('editEmail').value = document.getElementById('viewEmail').textContent;
+    document.getElementById('editPhone').value = document.getElementById('viewPhone').textContent;
+    
+    // Pre-fill Current Password
+    document.getElementById('currentPassword').value = "123456789"; 
 
-     // Show edit form, hide view card
-     document.getElementById('profileViewCard').style.display = 'none';
-     document.getElementById('editFormCard').style.display = 'block';
- }
+    // Show edit form, hide view card
+    document.getElementById('profileViewCard').style.display = 'none';
+    document.getElementById('editFormCard').style.display = 'block';
+}
+
+// Toggle visibility of password in Profile Details
+function toggleProfilePassword() {
+    const passwordSpan = document.getElementById('viewPassword');
+    const icon = passwordSpan.nextElementSibling;
+
+    if (passwordSpan.textContent === "*********") {
+        passwordSpan.textContent = "123456789";  // Show password
+        icon.classList.replace('bi-eye-slash', 'bi-eye');
+    } else {
+        passwordSpan.textContent = "*********";  // Hide password
+        icon.classList.replace('bi-eye', 'bi-eye-slash');
+    }
+}
+
 
  function cancelEdit() {
      // Clear form and errors
