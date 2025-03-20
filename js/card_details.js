@@ -46,22 +46,38 @@ function previewImage(event) {
 }
 
 function saveCardBasic() {
-    // Update card image
+    // Get form values
     const imagePreview = document.getElementById('imagePreview').src;
-    document.querySelector('#cardImageContainer img').src = imagePreview;
-
-    // Update text content
     const name = document.getElementById('cardName').value;
     const designation = document.getElementById('cardDesignation').value;
     const about = document.getElementById('cardAbout').value;
 
-    document.querySelector('.info-item:has(label:contains("Name")) p').textContent = name;
-    document.querySelector('.info-item:has(label:contains("Designation")) p').textContent = designation;
-    document.querySelector('.info-item:has(label:contains("About")) p').textContent = about;
+    // Update card image if changed
+    if (imagePreview && !imagePreview.includes('undefined')) {
+        document.querySelector('#cardImageContainer img').src = imagePreview;
+    }
 
-    // Close modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById('cardBasicModal'));
-    modal.hide();
+    // Update text content using proper selectors
+    const infoItems = document.querySelectorAll('.info-item');
+    infoItems.forEach(item => {
+        const label = item.querySelector('label').textContent.toLowerCase();
+        const p = item.querySelector('p');
+        
+        if (label.includes('name')) {
+            p.textContent = name;
+        } else if (label.includes('designation')) {
+            p.textContent = designation;
+        } else if (label.includes('about')) {
+            p.textContent = about;
+        }
+    });
+
+    // Close modal properly
+    const cardBasicModal = document.getElementById('cardBasicModal');
+    const modal = bootstrap.Modal.getInstance(cardBasicModal);
+    if (modal) {
+        modal.hide();
+    }
 }
 
 
