@@ -488,6 +488,7 @@
 <!------------------------------------------------- Business Hours Modal ------------------------------------>
 
 
+<!-- Business Hours Modal -->
 <div class="modal fade" id="hoursModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -496,43 +497,114 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <form id="hoursForm">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Day</th>
-                                    <th>Status</th>
-                                    <th>From Time</th>
-                                    <th>To Time</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Sunday</td>
-                                    <td>
-                                        <select class="form-select" id="sunday-status" onchange="toggleTimeInputs('sunday')">
-                                            <option value="open">Open</option>
-                                            <option value="closed" selected>Closed</option>
-                                        </select>
-                                    </td>
-                                    <td><input type="time" class="form-control" id="sunday-from" disabled></td>
-                                    <td><input type="time" class="form-control" id="sunday-to" disabled></td>
-                                </tr>
-                                <tr>
-                                    <td>Monday</td>
-                                    <td>
-                                        <select class="form-select" id="monday-status" onchange="toggleTimeInputs('monday')">
-                                            <option value="open" selected>Open</option>
-                                            <option value="closed">Closed</option>
-                                        </select>
-                                    </td>
-                                    <td><input type="time" class="form-control" id="monday-from" value="09:00"></td>
-                                    <td><input type="time" class="form-control" id="monday-to" value="18:00"></td>
-                                </tr>
-                                <!-- Add similar rows for other days -->
-                            </tbody>
-                        </table>
+                <form id="businessHoursForm">
+                    <div class="row g-3">
+                        <!-- Sunday -->
+                        <div class="col-md-6">
+                            <div class="business-hours-item">
+                                <label class="form-label">Sunday</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <select class="form-select" id="sunday-status" onchange="toggleTimeInputs('sunday')">
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                    <input type="time" class="form-control" id="sunday-from" value="09:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" id="sunday-to" value="18:00">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Monday -->
+                        <div class="col-md-6">
+                            <div class="business-hours-item">
+                                <label class="form-label">Monday</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <select class="form-select" id="monday-status" onchange="toggleTimeInputs('monday')">
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                    <input type="time" class="form-control" id="monday-from" value="09:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" id="monday-to" value="18:00">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add similar blocks for Tuesday through Saturday -->
+                        <!-- Tuesday -->
+                        <div class="col-md-6">
+                            <div class="business-hours-item">
+                                <label class="form-label">Tuesday</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <select class="form-select" id="tuesday-status" onchange="toggleTimeInputs('tuesday')">
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                    <input type="time" class="form-control" id="tuesday-from" value="09:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" id="tuesday-to" value="18:00">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Wednesday -->
+                        <div class="col-md-6">
+                            <div class="business-hours-item">
+                                <label class="form-label">Wednesday</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <select class="form-select" id="wednesday-status" onchange="toggleTimeInputs('wednesday')">
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                    <input type="time" class="form-control" id="wednesday-from" value="09:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" id="wednesday-to" value="18:00">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Thursday -->
+                        <div class="col-md-6">
+                            <div class="business-hours-item">
+                                <label class="form-label">Thursday</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <select class="form-select" id="thursday-status" onchange="toggleTimeInputs('thursday')">
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                    <input type="time" class="form-control" id="thursday-from" value="09:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" id="thursday-to" value="18:00">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Friday -->
+                        <div class="col-md-6">
+                            <div class="business-hours-item">
+                                <label class="form-label">Friday</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <select class="form-select" id="friday-status" onchange="toggleTimeInputs('friday')">
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                    <input type="time" class="form-control" id="friday-from" value="09:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" id="friday-to" value="18:00">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Saturday -->
+                        <div class="col-md-6">
+                            <div class="business-hours-item">
+                                <label class="form-label">Saturday</label>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <select class="form-select" id="saturday-status" onchange="toggleTimeInputs('saturday')">
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
+                                    <input type="time" class="form-control" id="saturday-from" value="09:00">
+                                    <span>to</span>
+                                    <input type="time" class="form-control" id="saturday-to" value="18:00">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -220,23 +220,6 @@ function saveSocialMedia() {
 }
 
 
-function toggleTimeInputs(day) {
-    const status = document.getElementById(`${day}-status`).value;
-    const fromInput = document.getElementById(`${day}-from`);
-    const toInput = document.getElementById(`${day}-to`);
-    
-    fromInput.disabled = status === 'closed';
-    toInput.disabled = status === 'closed';
-}
-
-function formatTime(timeString) {
-    if (!timeString) return '';
-    const [hours, minutes] = timeString.split(':');
-    const time = new Date();
-    time.setHours(parseInt(hours), parseInt(minutes));
-    return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-}
-
 function saveBusinessHours() {
     const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const container = document.getElementById('businessHoursContainer');
@@ -276,9 +259,31 @@ function saveBusinessHours() {
     });
     html += '</div></div>';
 
+    // Update the container and close modal
     container.innerHTML = html;
-    const modal = bootstrap.Modal.getInstance(document.getElementById('hoursModal'));
-    modal.hide();
+    
+    const hoursModal = document.getElementById('hoursModal');
+    const modal = bootstrap.Modal.getInstance(hoursModal);
+    if (modal) {
+        modal.hide();
+    }
+}
+
+function toggleTimeInputs(day) {
+    const status = document.getElementById(`${day}-status`).value;
+    const fromInput = document.getElementById(`${day}-from`);
+    const toInput = document.getElementById(`${day}-to`);
+    
+    fromInput.disabled = status === 'closed';
+    toInput.disabled = status === 'closed';
+}
+
+function formatTime(timeString) {
+    if (!timeString) return '';
+    const [hours, minutes] = timeString.split(':');
+    const time = new Date();
+    time.setHours(parseInt(hours), parseInt(minutes));
+    return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 }
 
 
