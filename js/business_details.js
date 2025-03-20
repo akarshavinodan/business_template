@@ -188,14 +188,35 @@ function saveBasicInfo() {
 }
 
 function saveSocialMedia() {
-    // Update social media in the card
-    document.querySelector('.social-item:has(label:contains("Facebook")) p').textContent = document.getElementById('facebook').value || 'Not Added';
-    document.querySelector('.social-item:has(label:contains("Instagram")) p').textContent = document.getElementById('instagram').value || 'Not Added';
-    document.querySelector('.social-item:has(label:contains("WhatsApp")) p').textContent = document.getElementById('whatsapp').value || 'Not Added';
-    document.querySelector('.social-item:has(label:contains("YouTube")) p').textContent = document.getElementById('youtube').value || 'Not Added';
+    // Get form values
+    const facebook = document.getElementById('facebook').value;
+    const instagram = document.getElementById('instagram').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const youtube = document.getElementById('youtube').value;
 
-    const modal = bootstrap.Modal.getInstance(document.getElementById('socialMediaModal'));
-    modal.hide();
+    // Update social media items in the card
+    const socialItems = document.querySelectorAll('.social-item');
+    socialItems.forEach(item => {
+        const label = item.querySelector('label').textContent.toLowerCase();
+        const p = item.querySelector('p');
+        
+        if (label.includes('facebook')) {
+            p.textContent = facebook || 'Not Added';
+        } else if (label.includes('instagram')) {
+            p.textContent = instagram || 'Not Added';
+        } else if (label.includes('whatsapp')) {
+            p.textContent = whatsapp || 'Not Added';
+        } else if (label.includes('youtube')) {
+            p.textContent = youtube || 'Not Added';
+        }
+    });
+
+    // Close the modal
+    const socialMediaModal = document.getElementById('socialMediaModal');
+    const modal = bootstrap.Modal.getInstance(socialMediaModal);
+    if (modal) {
+        modal.hide();
+    }
 }
 
 
