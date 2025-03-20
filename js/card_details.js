@@ -27,6 +27,10 @@ function openEditModal(type) {
     }else if (type === 'cardContact') {
         const modal = new bootstrap.Modal(document.getElementById('cardContactModal'));
         modal.show();
+    }else if (type === 'cardGallery') {
+        const modal = new bootstrap.Modal(document.getElementById('cardGalleryModal'));
+        loadGalleryPreview();
+        modal.show();
     }
 }
 
@@ -74,5 +78,78 @@ function saveCardContact() {
     });
 
     const modal = bootstrap.Modal.getInstance(document.getElementById('cardContactModal'));
+    modal.hide();
+}
+
+
+function handleGalleryUpload(event) {
+    const files = event.target.files;
+    const galleryPreview = document.getElementById('galleryPreview');
+    
+    Array.from(files).forEach((file, index) => {
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const col = document.createElement('div');
+                col.className = 'col-md-4 col-sm-6';
+                col.innerHTML = `
+                    <div class="preview-item">
+                        <img src="${e.target.result}" alt="Gallery Preview">
+                        <div class="remove-btn" onclick="removePreviewImage(${index})">
+                            <i class="bi bi-x-lg"></i>
+                        </div>
+                    </div>
+                `;
+                galleryPreview.appendChild(col);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+function loadGalleryPreview() {
+    const galleryPreview = document.getElementById('galleryPreview');
+    const currentImages = document.querySelectorAll('#cardGalleryContainer img');
+    galleryPreview.innerHTML = '';
+
+    currentImages.forEach((img, index) => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 col-sm-6';
+        col.innerHTML = `
+            <div class="preview-item">
+                <img src="${img.src}" alt="Gallery Preview">
+                <div class="remove-btn" onclick="removePreviewImage(${index})">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+            </div>
+        `;
+        galleryPreview.appendChild(col);
+    });
+}
+
+function removePreviewImage(index) {
+    const previewItems = document.querySelectorAll('#galleryPreview .col-md-4');
+    if (previewItems[index]) {
+        previewItems[index].remove();
+    }
+}
+
+function saveCardGallery() {
+    const galleryContainer = document.getElementById('cardGalleryContainer');
+    const previewImages = document.querySelectorAll('#galleryPreview img');
+    
+    galleryContainer.innerHTML = '';
+    previewImages.forEach(img => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 col-sm-6';
+        col.innerHTML = `
+            <div class="gallery-card">
+                <img src="${img.src}" alt="Gallery Image" class="img-fluid">
+            </div>
+        `;
+        galleryContainer.appendChild(col);
+    });
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('cardGalleryModal'));
     modal.hide();
 }
