@@ -181,6 +181,7 @@ function saveChanges() {
 }
 
 
+// Add these functions to main.js
 function openEditModal(type) {
     if (type === 'basic') {
         const modal = new bootstrap.Modal(document.getElementById('basicInfoModal'));
@@ -188,9 +189,87 @@ function openEditModal(type) {
     } else if (type === 'social') {
         const modal = new bootstrap.Modal(document.getElementById('socialMediaModal'));
         modal.show();
+    } else if (type === 'gallery') {
+        const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+        loadGalleryPreview();
+        modal.show();
     }
 }
 
+function handleGalleryUpload(event) {
+    const files = event.target.files;
+    const galleryPreview = document.getElementById('galleryPreview');
+    galleryPreview.innerHTML = '';
+
+    Array.from(files).forEach((file, index) => {
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const col = document.createElement('div');
+                col.className = 'col-md-4 col-sm-6';
+                col.innerHTML = `
+                    <div class="gallery-preview-item">
+                        <img src="${e.target.result}" class="img-fluid" alt="Gallery Preview">
+                        <button type="button" class="btn btn-danger btn-sm remove-image" onclick="removePreviewImage(${index})">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                `;
+                galleryPreview.appendChild(col);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+function removePreviewImage(index) {
+    const previewItems = document.querySelectorAll('#galleryPreview .col-md-4');
+    if (previewItems[index]) {
+        previewItems[index].remove();
+    }
+}
+
+function loadGalleryPreview() {
+    const galleryPreview = document.getElementById('galleryPreview');
+    const currentImages = document.querySelectorAll('#galleryContainer img');
+    galleryPreview.innerHTML = '';
+
+    currentImages.forEach((img, index) => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 col-sm-6';
+        col.innerHTML = `
+            <div class="gallery-preview-item">
+                <img src="${img.src}" class="img-fluid" alt="Gallery Preview">
+                <button type="button" class="btn btn-danger btn-sm remove-image" onclick="removePreviewImage(${index})">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        `;
+        galleryPreview.appendChild(col);
+    });
+}
+
+function saveGallery() {
+    const galleryContainer = document.getElementById('galleryContainer');
+    const previewImages = document.querySelectorAll('#galleryPreview img');
+    
+    galleryContainer.innerHTML = '';
+    previewImages.forEach(img => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 col-sm-6';
+        col.innerHTML = `
+            <div class="gallery-item">
+                <img src="${img.src}" alt="Business Image" class="img-fluid">
+            </div>
+        `;
+        galleryContainer.appendChild(col);
+    });
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('galleryModal'));
+    modal.hide();
+}
+
+// Keep your existing functions for basic info and social media...
 function saveBasicInfo() {
     // Update basic information in the card
     document.querySelector('.info-item:has(label:contains("Business Name")) p').textContent = document.getElementById('businessName').value;

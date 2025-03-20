@@ -92,3 +92,55 @@
 .alert {
     border-left: 4px solid #0dcaf0;
 }
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/* Add these gallery-specific styles */
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-upload {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-upload:hover {
+    border-color: #0d6efd;
+}
+
+.gallery-input {
+    display: none;
+}
+
+.gallery-preview-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.gallery-preview-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.gallery-preview-item .remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0.25rem 0.5rem;
+}
