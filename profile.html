@@ -123,41 +123,41 @@
                                  <div class="profile-card">
                                      <h3 class="section-title">Profile Information</h3>
                                      <form id="profileForm">
-                                         <div class="row g-4">
-                                             <div class="col-md-6">
-                                                 <div class="form-group">
-                                                     <label class="form-label">Business Name</label>
-                                                     <input type="text" class="form-control" value="TVS Mobility Mahindra" readonly>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-6">
-                                                 <div class="form-group">
-                                                     <label class="form-label">Full Name</label>
-                                                     <input type="text" class="form-control" value="John Doe" readonly>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-6">
-                                                 <div class="form-group">
-                                                     <label class="form-label">Email</label>
-                                                     <input type="email" class="form-control" value="john@example.com" readonly>
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-6">
-                                                 <div class="form-group">
-                                                     <label class="form-label">Phone Number</label>
-                                                     <input type="tel" class="form-control" value="+918111887797" readonly>
-                                                 </div>
-                                             </div>
-                                             <div class="col-12">
-                                                 <div class="form-group">
-                                                     <label class="form-label">Password</label>
-                                                     <div class="password-input">
-                                                         <input type="password" class="form-control" id="password" value="12345678">
-                                                         <i class="bi bi-eye-slash toggle-password" onclick="togglePassword('password')"></i>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <div class="card p-3">
+                                                    <strong>Business Name:</strong>
+                                                    <p class="mb-0">TVS Mobility Mahindra</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card p-3">
+                                                    <strong>Full Name:</strong>
+                                                    <p class="mb-0">John Doe</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card p-3">
+                                                    <strong>Email:</strong>
+                                                    <p class="mb-0">john@example.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card p-3">
+                                                    <strong>Phone Number:</strong>
+                                                    <p class="mb-0">+918111887797</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="card p-3">
+                                                    <strong>Password:</strong>
+                                                    <div class="password-container">
+                                                        <span id="password-text">********</span>
+                                                        <i class="bi bi-eye-slash toggle-password" onclick="togglePasswordText('password-text', '123456789')"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                      </form>
                                  </div>
                              </div>

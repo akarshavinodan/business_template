@@ -21,15 +21,11 @@
 
 
 
-function togglePassword(inputId) {
-    const input = document.getElementById(inputId);
-    const icon = input.nextElementSibling;
-    
-    if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.replace('bi-eye-slash', 'bi-eye');
+   function togglePasswordText(id, password) {
+    let element = document.getElementById(id);
+    if (element.textContent === '********') {
+        element.textContent = password;
     } else {
-        input.type = 'password';
-        icon.classList.replace('bi-eye', 'bi-eye-slash');
+        element.textContent = '********';
     }
 }
