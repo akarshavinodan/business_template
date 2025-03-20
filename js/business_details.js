@@ -155,14 +155,20 @@ function saveBasicInfo() {
     const logoFile = document.getElementById('logoInput').files[0];
 
     // Update the displayed information
-    document.querySelector('.info-item p:contains("Business Name")').textContent = businessName;
-    document.querySelector('.info-item p:contains("State")').textContent = state;
-    document.querySelector('.info-item p:contains("City")').textContent = city;
-    document.querySelector('.info-item p:contains("Address")').textContent = address;
-    document.querySelector('.info-item p:contains("Mobile")').textContent = mobile;
-    document.querySelector('.info-item p:contains("About Business")').textContent = about;
-    document.getElementById('servicesOffered').textContent = services;
-    document.getElementById('businessDeals').textContent = deals;
+    document.querySelector('.info-item p').textContent = businessName;
+    document.querySelectorAll('.info-item').forEach(item => {
+        const label = item.querySelector('label').textContent.toLowerCase();
+        const p = item.querySelector('p');
+        
+        if (label.includes('business name')) p.textContent = businessName;
+        if (label.includes('state')) p.textContent = state;
+        if (label.includes('city')) p.textContent = city;
+        if (label.includes('address')) p.textContent = address;
+        if (label.includes('mobile')) p.textContent = mobile;
+        if (label.includes('about business')) p.textContent = about;
+        if (label.includes('services offered')) p.textContent = services;
+        if (label.includes('deals')) p.textContent = deals;
+    });
 
     // Update logo if a new one was uploaded
     if (logoFile) {
@@ -174,8 +180,11 @@ function saveBasicInfo() {
     }
 
     // Close the modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById('basicInfoModal'));
-    modal.hide();
+    const basicInfoModal = document.getElementById('basicInfoModal');
+    const modal = bootstrap.Modal.getInstance(basicInfoModal);
+    if (modal) {
+        modal.hide();
+    }
 }
 
 function saveSocialMedia() {
