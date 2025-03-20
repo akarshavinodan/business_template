@@ -1,4 +1,4 @@
- // Sidebar Toggle
+// Sidebar Toggle
  const sidebar = document.getElementById('sidebar');
  const mainContent = document.getElementById('main-content');
  const toggleBtn = document.getElementById('toggle-btn');
@@ -18,3 +18,80 @@
          sidebar.classList.remove('expanded');
      }
  });
+
+ function showEditForm() {
+     // Populate edit form with current values
+     document.getElementById('editBusinessName').value = document.getElementById('viewBusinessName').textContent;
+     document.getElementById('editFullName').value = document.getElementById('viewFullName').textContent;
+     document.getElementById('editEmail').value = document.getElementById('viewEmail').textContent;
+     document.getElementById('editPhone').value = document.getElementById('viewPhone').textContent;
+
+     // Show edit form, hide view card
+     document.getElementById('profileViewCard').style.display = 'none';
+     document.getElementById('editFormCard').style.display = 'block';
+ }
+
+ function cancelEdit() {
+     // Clear form and errors
+     document.getElementById('editProfileForm').reset();
+     document.getElementById('passwordError').style.display = 'none';
+
+     // Show view card, hide edit form
+     document.getElementById('profileViewCard').style.display = 'block';
+     document.getElementById('editFormCard').style.display = 'none';
+ }
+
+ function togglePassword(inputId) {
+     const input = document.getElementById(inputId);
+     const icon = input.nextElementSibling;
+     
+     if (input.type === 'password') {
+         input.type = 'text';
+         icon.classList.replace('bi-eye-slash', 'bi-eye');
+     } else {
+         input.type = 'password';
+         icon.classList.replace('bi-eye', 'bi-eye-slash');
+     }
+ }
+
+ function saveChanges(event) {
+     event.preventDefault();
+     
+     const newPassword = document.getElementById('newPassword').value;
+     const confirmPassword = document.getElementById('confirmPassword').value;
+     const errorDiv = document.getElementById('passwordError');
+
+     // Password validation
+     if (newPassword || confirmPassword) {
+         if (newPassword !== confirmPassword) {
+             errorDiv.textContent = "New passwords don't match!";
+             errorDiv.style.display = 'block';
+             return;
+         }
+         if (newPassword.length < 6) {
+             errorDiv.textContent = "Password must be at least 6 characters long!";
+             errorDiv.style.display = 'block';
+             return;
+         }
+     }
+
+     // Update profile view with new values
+     document.getElementById('viewBusinessName').textContent = document.getElementById('editBusinessName').value;
+     document.getElementById('viewFullName').textContent = document.getElementById('editFullName').value;
+     document.getElementById('viewEmail').textContent = document.getElementById('editEmail').value;
+     document.getElementById('viewPhone').textContent = document.getElementById('editPhone').value;
+
+     // Show success message
+     const successAlert = document.createElement('div');
+     successAlert.className = 'alert alert-success';
+     successAlert.textContent = 'Profile updated successfully!';
+     document.querySelector('.settings-container').insertBefore(successAlert, document.querySelector('.profile-view-card'));
+
+     // Hide success message after 3 seconds
+     setTimeout(() => {
+         successAlert.remove();
+     }, 3000);
+
+     // Return to view mode
+     cancelEdit();
+ }

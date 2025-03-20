@@ -105,7 +105,110 @@
  <!-- ---------------------------------------------content section------------------------------------------------- -->
 
 
- <!-- ---------------------------------------------content section------------------------------------------------- -->
+ <!-- Content Section -->
+ <div class="content-wrapper">
+     <div class="container-fluid">
+         <div class="settings-container">
+             <!-- Profile View Card -->
+             <div class="profile-view-card" id="profileViewCard">
+                 <div class="profile-header">
+                     <img src="images/user.jpeg" alt="Profile Picture" id="currentProfilePic">
+                     <h3>Profile Details</h3>
+                 </div>
+                 <div class="profile-details">
+                     <div class="detail-item">
+                         <label>Business Name:</label>
+                         <span id="viewBusinessName">TVS Mobility Mahindra</span>
+                     </div>
+                     <div class="detail-item">
+                         <label>Full Name:</label>
+                         <span id="viewFullName">John Doe</span>
+                     </div>
+                     <div class="detail-item">
+                         <label>Email:</label>
+                         <span id="viewEmail">john@example.com</span>
+                     </div>
+                     <div class="detail-item">
+                         <label>Phone Number:</label>
+                         <span id="viewPhone">+918111887797</span>
+                     </div>
+                     <button class="btn btn-primary edit-btn" onclick="showEditForm()">
+                         <i class="bi bi-pencil-square"></i> Edit Profile
+                     </button>
+                 </div>
+             </div>
+
+             <!-- Edit Form -->
+             <div class="edit-form-card" id="editFormCard" style="display: none;">
+                 <h3>Edit Profile</h3>
+                 <form id="editProfileForm" onsubmit="saveChanges(event)">
+                     <div class="row g-4">
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label>Business Name</label>
+                                 <input type="text" class="form-control" id="editBusinessName" required>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label>Full Name</label>
+                                 <input type="text" class="form-control" id="editFullName" required>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label>Email</label>
+                                 <input type="email" class="form-control" id="editEmail" required>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label>Phone Number</label>
+                                 <input type="tel" class="form-control" id="editPhone" required>
+                             </div>
+                         </div>
+                         <div class="col-12">
+                             <div class="form-group">
+                                 <label>Current Password</label>
+                                 <div class="password-input">
+                                     <input type="password" class="form-control" id="currentPassword" required>
+                                     <i class="bi bi-eye-slash toggle-password" onclick="togglePassword('currentPassword')"></i>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label>New Password</label>
+                                 <div class="password-input">
+                                     <input type="password" class="form-control" id="newPassword">
+                                     <i class="bi bi-eye-slash toggle-password" onclick="togglePassword('newPassword')"></i>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <div class="form-group">
+                                 <label>Confirm Password</label>
+                                 <div class="password-input">
+                                     <input type="password" class="form-control" id="confirmPassword">
+                                     <i class="bi bi-eye-slash toggle-password" onclick="togglePassword('confirmPassword')"></i>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="col-12">
+                             <div class="alert alert-danger" id="passwordError" style="display: none;"></div>
+                         </div>
+                         <div class="col-12">
+                             <div class="form-buttons">
+                                 <button type="submit" class="btn btn-primary">Save Changes</button>
+                                 <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
+                             </div>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+ </div>
 
 
 </div>
