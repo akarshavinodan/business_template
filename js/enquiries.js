@@ -21,17 +21,24 @@ window.addEventListener('resize', () => {
 
 // Enquiries Functions
 function showEnquiries(type) {
-    const modal = new bootstrap.Modal(document.getElementById('enquiriesModal'));
-    const modalTitle = document.getElementById('modalTitle');
-    const enquiriesList = document.getElementById('enquiriesList');
-    
-    modalTitle.textContent = `Enquiries from ${type === 'business' ? 'Business' : 'Card'}`;
+    // Update active state of cards
+    document.querySelectorAll('.enquiry-card').forEach(card => {
+        card.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+
+    const enquiriesContainer = document.getElementById('enquiriesContainer');
+    const title = type === 'business' ? 'Business' : 'Card';
     
     // Example data - replace with actual data
     const enquiries = []; // Your enquiries data would go here
     
+    let content = `
+        <h4 class="enquiries-title">Enquiries from ${title}</h4>
+    `;
+    
     if (enquiries.length === 0) {
-        enquiriesList.innerHTML = `
+        content += `
             <div class="no-enquiries">
                 <i class="bi bi-inbox"></i>
                 <h4>No enquiries yet</h4>
@@ -39,7 +46,7 @@ function showEnquiries(type) {
             </div>
         `;
     } else {
-        enquiriesList.innerHTML = enquiries.map(enquiry => `
+        content += enquiries.map(enquiry => `
             <div class="enquiry-item">
                 <h5>${enquiry.title}</h5>
                 <p>${enquiry.message}</p>
@@ -48,5 +55,5 @@ function showEnquiries(type) {
         `).join('');
     }
     
-    modal.show();
+    enquiriesContainer.innerHTML = content;
 }
