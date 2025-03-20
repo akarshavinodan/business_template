@@ -82,6 +82,7 @@ function createDealCard(deal) {
         <div class="deal-card">
             <img src="${deal.image}" class="deal-image" alt="Deal">
             <div class="deal-content">
+             <div class="deal">${deal.deal}</div>
                 <div class="deal-validity">Valid until: ${formatDate(deal.validity)}</div>
                 <div class="coupon-code">${deal.couponCode}</div>
                 <p>${deal.description}</p>
