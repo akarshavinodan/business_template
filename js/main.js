@@ -193,6 +193,9 @@ function openEditModal(type) {
         const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
         loadGalleryPreview();
         modal.show();
+    }else if (type === 'hours') {
+        const modal = new bootstrap.Modal(document.getElementById('hoursModal'));
+        modal.show();
     }
 }
 
@@ -291,5 +294,67 @@ function saveSocialMedia() {
     document.querySelector('.social-item:has(label:contains("YouTube")) p').textContent = document.getElementById('youtube').value || 'Not Added';
 
     const modal = bootstrap.Modal.getInstance(document.getElementById('socialMediaModal'));
+    modal.hide();
+}
+
+
+function toggleTimeInputs(day) {
+    const status = document.getElementById(`${day}-status`).value;
+    const fromInput = document.getElementById(`${day}-from`);
+    const toInput = document.getElementById(`${day}-to`);
+    
+    fromInput.disabled = status === 'closed';
+    toInput.disabled = status === 'closed';
+}
+
+function formatTime(timeString) {
+    if (!timeString) return '';
+    const [hours, minutes] = timeString.split(':');
+    const time = new Date();
+    time.setHours(parseInt(hours), parseInt(minutes));
+    return time.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+}
+
+function saveBusinessHours() {
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const container = document.getElementById('businessHoursContainer');
+    let html = '<div class="row">';
+    
+    // First column (Sunday to Wednesday)
+    html += '<div class="col-md-6">';
+    days.slice(0, 4).forEach(day => {
+        const status = document.getElementById(`${day}-status`).value;
+        const fromTime = document.getElementById(`${day}-from`).value;
+        const toTime = document.getElementById(`${day}-to`).value;
+
+        html += `
+            <div class="hours-item">
+                <span class="day">${day.charAt(0).toUpperCase() + day.slice(1)}</span>
+                ${status === 'closed' 
+                    ? '<span class="status text-danger">Closed</span>'
+                    : `<span class="time text-success">${formatTime(fromTime)} - ${formatTime(toTime)}</span>`}
+            </div>`;
+    });
+    html += '</div>';
+
+    // Second column (Thursday to Saturday)
+    html += '<div class="col-md-6">';
+    days.slice(4).forEach(day => {
+        const status = document.getElementById(`${day}-status`).value;
+        const fromTime = document.getElementById(`${day}-from`).value;
+        const toTime = document.getElementById(`${day}-to`).value;
+
+        html += `
+            <div class="hours-item">
+                <span class="day">${day.charAt(0).toUpperCase() + day.slice(1)}</span>
+                ${status === 'closed' 
+                    ? '<span class="status text-danger">Closed</span>'
+                    : `<span class="time text-success">${formatTime(fromTime)} - ${formatTime(toTime)}</span>`}
+            </div>`;
+    });
+    html += '</div></div>';
+
+    container.innerHTML = html;
+    const modal = bootstrap.Modal.getInstance(document.getElementById('hoursModal'));
     modal.hide();
 }
