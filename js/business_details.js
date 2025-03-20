@@ -131,15 +131,49 @@ function saveGallery() {
 }
 
 // Keep your existing functions for basic info and social media...
-function saveBasicInfo() {
-    // Update basic information in the card
-    document.querySelector('.info-item:has(label:contains("Business Name")) p').textContent = document.getElementById('businessName').value;
-    document.querySelector('.info-item:has(label:contains("State")) p').textContent = document.getElementById('state').value;
-    document.querySelector('.info-item:has(label:contains("City")) p').textContent = document.getElementById('city').value;
-    document.querySelector('.info-item:has(label:contains("Address")) p').textContent = document.getElementById('address').value;
-    document.querySelector('.info-item:has(label:contains("Mobile")) p').textContent = document.getElementById('mobile').value;
-    document.querySelector('.info-item:has(label:contains("About Business")) p').textContent = document.getElementById('about').value;
+function previewLogo(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('logoPreview').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+}
 
+function saveBasicInfo() {
+    // Get all form values
+    const businessName = document.getElementById('businessName').value;
+    const state = document.getElementById('state').value;
+    const city = document.getElementById('city').value;
+    const address = document.getElementById('address').value;
+    const mobile = document.getElementById('mobile').value;
+    const about = document.getElementById('about').value;
+    const services = document.getElementById('services').value;
+    const deals = document.getElementById('deals').value;
+    const logoFile = document.getElementById('logoInput').files[0];
+
+    // Update the displayed information
+    document.querySelector('.info-item p:contains("Business Name")').textContent = businessName;
+    document.querySelector('.info-item p:contains("State")').textContent = state;
+    document.querySelector('.info-item p:contains("City")').textContent = city;
+    document.querySelector('.info-item p:contains("Address")').textContent = address;
+    document.querySelector('.info-item p:contains("Mobile")').textContent = mobile;
+    document.querySelector('.info-item p:contains("About Business")').textContent = about;
+    document.getElementById('servicesOffered').textContent = services;
+    document.getElementById('businessDeals').textContent = deals;
+
+    // Update logo if a new one was uploaded
+    if (logoFile) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('businessLogo').src = e.target.result;
+        };
+        reader.readAsDataURL(logoFile);
+    }
+
+    // Close the modal
     const modal = bootstrap.Modal.getInstance(document.getElementById('basicInfoModal'));
     modal.hide();
 }

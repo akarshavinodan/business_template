@@ -177,3 +177,23 @@
     min-width: 100px;
 }
 
+.business-logo {
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+.business-logo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-upload-container {
+    text-align: center;
+}
+
+.logo-upload-container img {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
