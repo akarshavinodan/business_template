@@ -196,6 +196,9 @@ function openEditModal(type) {
     }else if (type === 'hours') {
         const modal = new bootstrap.Modal(document.getElementById('hoursModal'));
         modal.show();
+    }else if (type === 'meta') {
+        const modal = new bootstrap.Modal(document.getElementById('metaModal'));
+        modal.show();
     }
 }
 
@@ -356,5 +359,26 @@ function saveBusinessHours() {
 
     container.innerHTML = html;
     const modal = bootstrap.Modal.getInstance(document.getElementById('hoursModal'));
+    modal.hide();
+}
+
+
+function saveMetaInfo() {
+    const keywords = document.getElementById('metaKeywords').value;
+    const description = document.getElementById('metaDescription').value;
+    
+    const container = document.getElementById('metaContainer');
+    container.innerHTML = `
+        <div class="info-item">
+            <label>Meta Keywords</label>
+            <p>${keywords}</p>
+        </div>
+        <div class="info-item">
+            <label>Meta Description</label>
+            <p>${description}</p>
+        </div>
+    `;
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('metaModal'));
     modal.hide();
 }
