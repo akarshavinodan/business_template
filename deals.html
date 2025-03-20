@@ -102,16 +102,64 @@
         </header>
 
          <!-- Content Section -->
+         <!-- Add after the header section -->
          <div class="content-wrapper">
-            <div class="container-fluid">
-                <!-- Header -->
-                <div class="row mb-4">
-                    <div class="col-12">
-                        <h1 class="page-title">Deals</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
+             <div class="container-fluid">
+                 <div class="row mb-4">
+                     <div class="col-12 d-flex justify-content-between align-items-center">
+                         <h1 class="page-title">Deals</h1>
+                         <button class="btn btn-primary" onclick="openAddDealModal()">
+                             <i class="bi bi-plus-lg"></i> Add New Deal
+                         </button>
+                     </div>
+                 </div>
+                 
+                 <div class="row g-4" id="dealsContainer"></div>
+
+                 <!-- Add Deal Modal -->
+                 <div class="modal fade" id="addDealModal" tabindex="-1">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h5 class="modal-title">Add New Deal</h5>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                             </div>
+                             <div class="modal-body">
+                                 <form id="addDealForm">
+                                    <div class="mb-3">
+                                        <label class="form-label">Deal</label>
+                                        <input type="text" class="form-control" id="deal" required>
+                                    </div>
+                                     <div class="mb-3">
+                                         <label class="form-label">Deal Image</label>
+                                         <div class="image-upload">
+                                             <input type="file" id="dealImage" class="form-control" accept="image/*" onchange="previewImage(event)" required>
+                                             <img id="dealPreview" class="mt-2 w-100" style="display: none; max-height: 200px; object-fit: cover;">
+                                         </div>
+                                     </div>
+                                     <div class="mb-3">
+                                         <label class="form-label">Deal Validity</label>
+                                         <input type="date" class="form-control" id="dealValidity" required>
+                                     </div>
+                                     <div class="mb-3">
+                                         <label class="form-label">Coupon Code</label>
+                                         <input type="text" class="form-control" id="couponCode" required>
+                                     </div>
+                                     <div class="mb-3">
+                                         <label class="form-label">Deal Description</label>
+                                         <textarea class="form-control" id="dealDescription" rows="3" required></textarea>
+                                     </div>
+                                 </form>
+                             </div>
+                             <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                 <button type="button" class="btn btn-primary" onclick="submitDeal()">Submit</button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
 
 <!-- -------------------------------------------------------------------------------------------------- -->
     </div>
