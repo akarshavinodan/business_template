@@ -18,6 +18,8 @@ function saveBusinessDetails() {
     if (modal) {
         modal.hide();
     }
+
+    window.location.href = 'listing.html';
 }
 
 // Add gallery preview functionality
