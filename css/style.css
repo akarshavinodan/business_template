@@ -604,3 +604,37 @@
     height: 350px;
     overflow-y: auto;
 }
+
+
+/* ------------------------------------------------------------- */
+
+.scrolling-text-container {
+    background: #ffc107;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.scrolling-text {
+    display: inline-block;
+    animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.go-back-container {
+    text-align: center;
+    margin: 20px 0;
+}
