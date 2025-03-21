@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/user_admin.css" rel="stylesheet">
+    <link href="css/deals.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/ict-logoaaa-removebg-preview.png" alt="Logo" class="logo-img" height="40">
+            <button class="btn toggle-btn" id="toggle-btn">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-content">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="user_admin.html">
+                        <i class="bi bi-speedometer2"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="add_business_details.html">
+                        <i class="bi bi-briefcase"></i>
+                        <span class="nav-text">Add Business Details</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="business_details.html">
+                        <i class="bi bi-buildings"></i>
+                        <span class="nav-text">Business Details</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="card_details.html">
+                        <i class="bi bi-credit-card"></i>
+                        <span class="nav-text">Card Details</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="deals.html">
+                        <i class="bi bi-tag"></i>
+                        <span class="nav-text">Deals</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="enquiries.html">
+                        <i class="bi bi-envelope"></i>
+                        <span class="nav-text">Enquiries</span>
+                    </a>
+                </li>
+                <li class="nav-item mt-auto">
+                    <a class="nav-link text-danger" href="#">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span class="nav-text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <!-- Header -->
+        <header class="header">
+            <button class="btn mobile-toggle" id="mobile-toggle">
+                <i class="bi bi-list"></i>
+            </button>
+            
+            <div class="header-right">
+                <div class="search-box d-none d-md-block">
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+                
+                <div class="user-menu dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+
+                        <img src="images/user.jpeg" alt="User" class="user-avatar">
+                        
+                        <span class="d-none d-md-inline">John Doe</span>
+                        
+                        </button>
+                        
+                        <ul class="dropdown-menu dropdown-menu-end">
+                        
+                        <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person"></i> Profile</a></li>
+                        
+                        <li><a class="dropdown-item" href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+                        
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><a class="dropdown-item text-danger" href="login.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        
+                        </ul>
+                        
+                </div>
+            </div>
+        </header>
+
+         <!-- Content Section -->
+      
+<!-- -------------------------------------------------------------------------------------------------- -->
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/deals.js"></script>
+
+</body>
+</html>
