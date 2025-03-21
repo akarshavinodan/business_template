@@ -1,0 +1,127 @@
+/* Listing Cards */
+.listing-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+}
+
+.listing-header {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    color: #fff;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.listing-header i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.listing-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Premium Card Styling */
+.listing-card.premium .listing-header {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+}
+
+.premium-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255,255,255,0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.listing-body {
+    padding: 2rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.features-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.features-list li i {
+    margin-right: 1rem;
+    color: #2193b0;
+    font-size: 1.2rem;
+}
+
+.listing-card.premium .features-list li i {
+    color: #1e3c72;
+}
+
+.price-tag {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.price-tag .amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.price-tag .period {
+    color: #888;
+    font-size: 1rem;
+}
+
+.listing-footer {
+    padding: 1.5rem;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.listing-footer .btn {
+    padding: 0.8rem 2.5rem;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.listing-footer .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .listing-card {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .listing-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .price-tag .amount {
+        font-size: 2rem;
+    }
+}
