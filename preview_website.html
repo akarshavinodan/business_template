@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/user_admin.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/preview_website.css" rel="stylesheet">
 </head>
 <body>
 
@@ -122,6 +122,192 @@
     </button>
 </div>
         
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <!-- Clinic Header with Stats -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <div class="clinic-header p-4 bg-light rounded-3 shadow-sm">
+                    <h1 class="display-5 mb-4">Beau Aesthetica Clinic, Kochi</h1>
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="fa fa-map-marker-alt text-primary me-2 fs-4"></i>
+                        <p class="mb-0">2nd floor Imperial Greens Stadium link road Opposite skyline Imperial Gardens, near IMA House, Kaloor, Kochi, Kerala 682025</p>
+                    </div>
+                  
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#shareModal" onclick="generateQR()">
+                            <i class="fa fa-share-alt me-2"></i> Share
+                        </button>
+                       
+                        
+                        <!-- Update the Send Enquiry button to trigger the modal -->
+                        <button class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                            <i class="fa fa-envelope me-2"></i> Send Enquiry
+                        </button>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-primary text-white rounded-3 p-4 h-100">
+                    <h4 class="text-white mb-4">Quick Contact</h4>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control border-0" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control border-0" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control border-0" rows="3" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-light rounded-pill w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery & Info Section -->
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <!-- Gallery Section with Tabs -->
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-gallery">Photo Gallery</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-gallery">
+                        <div class="position-relative">
+                            <div class="gallery-grid mt-4">
+                                <div class="row g-2">
+                                    <div class="col-3"><img src="img/ba1.webp" class="img-fluid rounded"></div>
+                                    <div class="col-3"><img src="img/ba2.webp" class="img-fluid rounded"></div>
+                                    <div class="col-3"><img src="img/ba3.webp" class="img-fluid rounded"></div>
+                                    <div class="col-3"><img src="img/ba4.webp" class="img-fluid rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Section with Services -->
+                <div class="mt-5">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="mb-0">About Us</h3>
+                        <div class="social-share">
+                            <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="me-2"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-light p-4 rounded-3 mb-4">
+                        <p class="text-muted mb-0">At Beau Aesthetica we believe in not just imparting the treatments, but delivering the rightful treatments in the rightly required proportions, tailor-making them according to each patient and carrying them out with the utmost care and skill. We specialize not only in the best injectable treatments but also the most advanced laser and chemical peel treatments. We have our own unique range of skin rejuvenation treatments consisting of various skin booster and hydration techniques.</p>
+                    </div>
+                    
+                    <!-- Services Grid -->
+                    <h4 class="mb-4">Our Services</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="service-item-sm d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-syringe fa-2x text-primary me-3"></i>
+                                <span>Injectable Treatments</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item-sm d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-radiation fa-2x text-primary me-3"></i> <!-- Radiation Icon -->
+                                <span>Laser Treatments</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item-sm d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-spa fa-2x text-primary me-3"></i>
+                                <span>Chemical Peels</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item-sm d-flex align-items-center p-3 bg-light rounded">
+                                <i class="fas fa-tint fa-2x text-primary me-3"></i>
+                                <span>Skin Hydration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Opening Hours Card -->
+                <div class="bg-light rounded-3 p-4 mb-4 shadow-sm">
+                    <h4 class="mb-4">Opening Hours</h4>
+                    <div class="opening-hours">
+                        <div class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="day">Sunday</span>
+                            <span class="hours text-danger">Closed</span>
+                        </div>
+                        <div class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="day">Monday</span>
+                            <span class="hours">10:30 AM - 05:30 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="day">Tuesday</span>
+                            <span class="hours">10:30 AM - 05:30 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="day">Wednesday</span>
+                            <span class="hours">10:30 AM - 07:00 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="day">Thursday</span>
+                            <span class="hours">10:30 AM - 05:30 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="day">Friday</span>
+                            <span class="hours">10:30 AM - 05:30 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="day">Saturday</span>
+                            <span class="hours">10:30 AM - 05:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Reviews Section -->
+<div class="bg-light rounded-3 p-4 shadow-sm review">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0">Reviews</h4>
+        
+    </div>
+
+    <!-- Review List -->
+    <div class="review-list mb-4" id="review-list">
+        <!-- Sample Review -->
+        <div class="review-item mb-3 pb-3 border-bottom">
+            <div class="d-flex align-items-center mb-2">
+                <img src="img/user.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                <div>
+                    <h6 class="mb-0">John Doe</h6>
+                    <small class="text-muted">New York, USA</small><br>
+                    <small class="text-muted">2 days ago</small>
+                </div>
+            </div>
+            <p class="mb-0 text-muted">Great experience! The staff was very professional...</p>
+        </div>
+    </div>
+
+    <!-- Button to Open Modal -->
+    <button class="btn btn-primary rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#reviewModal">
+        <i class="fa fa-star me-2"></i> Write a Review
+    </button>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
