@@ -67,3 +67,49 @@
 .btn-lg {
     width: 100%;
 }
+
+
+/* DNS Instructions Modal Styles */
+.dns-instructions {
+    padding: 1rem;
+}
+
+.dns-records {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.record-item {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.record-item code {
+    background: #e9ecef;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.support-info {
+    border-top: 1px solid #dee2e6;
+    padding-top: 1.5rem;
+}
+
+.support-details {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.support-details p {
+    margin-bottom: 0.5rem;
+}
+
+.support-details i {
+    color: #47a4d1;
+}

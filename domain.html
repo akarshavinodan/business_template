@@ -147,7 +147,7 @@
         </div>
 
         <div class="domain-footer">
-            <button class="btn btn-primary btn-lg">Next <i class="bi bi-arrow-right"></i></button>
+            <button class="btn btn-primary btn-lg" onclick="showDnsInstructions()">Next <i class="bi bi-arrow-right"></i></button>
         </div>
     </div>
 </div>
@@ -155,9 +155,56 @@
     </div>
 </div>
 
+<!-- Add this modal before the closing body tag -->
+<div class="modal fade" id="dnsInstructionsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">DNS Configuration Instructions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="dns-instructions">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        Please update your DNS settings with the following information:
+                    </div>
+
+                    <div class="dns-records">
+                        <h6>A Records Configuration:</h6>
+                        <div class="record-item">
+                            <code>Host: @</code>
+                            <code>IP Address: xxx.xxx.xxx.xxx</code>
+                        </div>
+                    </div>
+
+                    <div class="mail-instructions mt-4">
+                        <h6>Business Email Configuration:</h6>
+                        <p>If you have a business email, please update your A Records with the provided IP address.</p>
+                    </div>
+
+                    <div class="support-info mt-4">
+                        <h6>Need Help?</h6>
+                        <p>Contact our support team:</p>
+                        <div class="support-details">
+                            <p><strong>ICT Global Tech Pvt Ltd.</strong></p>
+                            <p><i class="bi bi-envelope-fill me-2"></i>support@ictglobal.com</p>
+                            <p><i class="bi bi-telephone-fill me-2"></i>+1234567890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='preview_website.html'">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/deals.js"></script>
+<script src="js/domain.js"></script>
 
 </body>
 </html>
