@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/user_admin.css" rel="stylesheet">
-    <link href="css/listing.css" rel="stylesheet">
+    <link href="css/domain.css" rel="stylesheet">
 </head>
 <body>
 
@@ -109,19 +109,50 @@
             </div>
         </header>
 
-        
-<!-- Content Section -->
-<div class="content-wrapper">
-    <div class="container-fluid">
-        <!-- Header -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <h1 class="page-title">Domain</h1>
+<div class="domain-container">
+    <div class="domain-card">
+        <div class="domain-header">
+            <h2>Choose Your Domain Name</h2>
+            <p>Select a domain name for your business website</p>
+        </div>
+
+        <div class="domain-options">
+            <div class="custom-domain-section">
+                <h4>Enter your domain name</h4>
+                <div class="domain-input-group">
+                    <input type="text" class="domain-input" placeholder="yourbusiness">
+                    <select class="domain-extension">
+                        <option value=".com">.com</option>
+                        <option value=".in">.in</option>
+                        <option value=".co.in">.co.in</option>
+                        <option value=".net">.net</option>
+                        <option value=".org">.org</option>
+                    </select>
+                </div>
             </div>
+
+            <div class="separator">
+                <span>OR</span>
+            </div>
+
+            <div class="temp-domain-section">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="tempDomain">
+                    <label class="form-check-label" for="tempDomain">
+                        Use temporary domain
+                        <small class="text-muted d-block">Your site will be available at yourbusiness.tempurl.com</small>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="domain-footer">
+            <button class="btn btn-primary btn-lg" onclick="window.location.href='next-page.html'">
+                Next <i class="bi bi-arrow-right"></i>
+            </button>
         </div>
     </div>
 </div>
-      
 <!-- -------------------------------------------------------------------------------------------------- -->
     </div>
 </div>

@@ -1,0 +1,69 @@
+.domain-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.domain-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 800px;
+}
+
+.domain-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.domain-header p {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.domain-options {
+    margin-top: 20px;
+}
+
+.custom-domain-section,
+.temp-domain-section {
+    margin-bottom: 20px;
+}
+
+.domain-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.domain-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.domain-extension {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.separator {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #6c757d;
+}
+
+.domain-footer {
+    margin-top: 20px;
+}
+
+.btn-lg {
+    width: 100%;
+}
