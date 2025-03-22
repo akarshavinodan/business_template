@@ -109,8 +109,10 @@
             </div>
         </header>
 
+<!-- Replace the modal with these cards -->
 <div class="domain-container">
-    <div class="domain-card">
+    <!-- Initial Domain Card -->
+    <div class="domain-card" id="domainCard">
         <div class="domain-header">
             <h2>Choose Your Domain Name</h2>
             <p>Select a domain name for your business website</p>
@@ -150,59 +152,69 @@
             <button class="btn btn-primary btn-lg" onclick="showDnsInstructions()">Next <i class="bi bi-arrow-right"></i></button>
         </div>
     </div>
+
+    <!-- DNS Instructions Card (Initially Hidden) -->
+    <div class="domain-card dns-card" id="dnsCard" style="display: none;">
+        <div class="domain-header">
+            <h2>DNS Configuration Instructions</h2>
+        </div>
+        <div class="dns-instructions">
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle-fill me-2"></i>
+                Please update your DNS settings with the following information:
+            </div>
+
+            <div class="dns-records">
+                <h6>A Records Configuration:</h6>
+                <div class="record-item">
+                    <code>Host: @</code>
+                    <code>IP Address: xxx.xxx.xxx.xxx</code>
+                </div>
+            </div>
+
+            <div class="mail-instructions mt-4">
+                <h6>Business Email Configuration:</h6>
+                <p>If you have a business email, please update your A Records with the provided IP address.</p>
+            </div>
+
+            <div class="support-info mt-4">
+                <h6>Need Help?</h6>
+                <p>Contact our support team:</p>
+                <div class="support-details">
+                    <p><strong>ICT Global Tech Pvt Ltd.</strong></p>
+                    <p><i class="bi bi-envelope-fill me-2"></i>support@ictglobal.com</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i>+1234567890</p>
+                </div>
+            </div>
+        </div>
+        <div class="domain-footer">
+            <button class="btn btn-secondary me-2" onclick="showDomainCard()">Back</button>
+            <button class="btn btn-primary" onclick="showHostingConfirmation()">Continue</button>
+        </div>
+    </div>
+
+    <!-- Hosting Confirmation Card (Initially Hidden) -->
+    <div class="domain-card hosting-card" id="hostingCard" style="display: none;">
+        <div class="success-icon mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+        </div>
+        <h4 class="text-success mb-4">Your website has been successfully hosted.</h4>
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            Warning: If DNS records are not updated, the website may not function properly.
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary btn-lg" onclick="window.location.href='preview_website.html'">
+                Continue to Website
+            </button>
+        </div>
+    </div>
 </div>
 <!-- -------------------------------------------------------------------------------------------------- -->
     </div>
 </div>
 
-<!--------------------------------------------------modal -------------------------------------------------->
 
-
-<div class="modal fade" id="dnsInstructionsModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">DNS Configuration Instructions</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="dns-instructions">
-                    <div class="alert alert-info">
-                        <i class="bi bi-info-circle-fill me-2"></i>
-                        Please update your DNS settings with the following information:
-                    </div>
-
-                    <div class="dns-records">
-                        <h6>A Records Configuration:</h6>
-                        <div class="record-item">
-                            <code>Host: @</code>
-                            <code>IP Address: xxx.xxx.xxx.xxx</code>
-                        </div>
-                    </div>
-
-                    <div class="mail-instructions mt-4">
-                        <h6>Business Email Configuration:</h6>
-                        <p>If you have a business email, please update your A Records with the provided IP address.</p>
-                    </div>
-
-                    <div class="support-info mt-4">
-                        <h6>Need Help?</h6>
-                        <p>Contact our support team:</p>
-                        <div class="support-details">
-                            <p><strong>ICT Global Tech Pvt Ltd.</strong></p>
-                            <p><i class="bi bi-envelope-fill me-2"></i>support@ictglobal.com</p>
-                            <p><i class="bi bi-telephone-fill me-2"></i>+1234567890</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Continue</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
